@@ -6,7 +6,7 @@ const FooterSection = () => {
           <h3 className="text-2xl font-bold mb-2">
             <span className="text-gradient-primary">创新发展部</span>
           </h3>
-          <p className="text-muted-foreground text-sm">2024年度工作总结汇报</p>
+          <p className="text-muted-foreground text-sm">2025年度工作总结汇报</p>
         </div>
         
         <div className="flex flex-wrap justify-center gap-8 text-sm text-foreground/70 mb-6">

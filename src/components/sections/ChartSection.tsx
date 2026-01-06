@@ -3,10 +3,10 @@ import ScrollReveal from "../ScrollReveal";
 
 // 年度收入增长趋势数据（可替换为真实数据）
 const yearlyData = [
-  { year: "2021", revenue: 520, cost: 380 },
-  { year: "2022", revenue: 680, cost: 450 },
-  { year: "2023", revenue: 820, cost: 530 },
-  { year: "2024", revenue: 990.75, cost: 611.94 },
+  { year: "2022", revenue: 520, cost: 380 },
+  { year: "2023", revenue: 680, cost: 450 },
+  { year: "2024", revenue: 820, cost: 530 },
+  { year: "2025", revenue: 990.75, cost: 611.94 },
 ];
 
 // 业务收入构成数据（可替换为真实数据）

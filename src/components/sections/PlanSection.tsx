@@ -63,7 +63,7 @@ const PlanSection = () => {
         <ScrollReveal>
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/30 mb-6">
-              <span className="text-gold-dark text-sm font-medium">2025年度展望</span>
+              <span className="text-gold-dark text-sm font-medium">2026年度展望</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               创新应用<span className="text-gradient-gold">落地推广</span>
@@ -107,7 +107,7 @@ const PlanSection = () => {
         <ScrollReveal delay={700}>
           <div className="mt-16 p-8 rounded-3xl bg-gradient-to-r from-primary/10 via-gold/10 to-accent/10 border border-primary/20 shadow-lg">
             <div className="text-center">
-              <h3 className="text-2xl font-bold mb-4">2025年度核心目标</h3>
+              <h3 className="text-2xl font-bold mb-4">2026年度核心目标</h3>
               <div className="flex flex-wrap justify-center gap-8">
                 <div className="text-center">
                   <div className="text-3xl font-black text-gradient-primary mb-2">产品落地</div>

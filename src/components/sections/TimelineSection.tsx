@@ -57,13 +57,13 @@ const TimelineSection = () => {
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6">
               <Calendar className="w-4 h-4 text-primary" />
-              <span className="text-primary text-sm font-medium">2024年度历程</span>
+              <span className="text-primary text-sm font-medium">2025年度历程</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               季度<span className="text-gradient-gold">里程碑</span>
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              回顾2024年各季度重要节点和关键事件
+              回顾2025年各季度重要节点和关键事件
             </p>
           </div>
         </ScrollReveal>
@@ -147,7 +147,7 @@ const TimelineSection = () => {
         <ScrollReveal delay={700}>
           <div className="mt-16 p-8 rounded-3xl bg-gradient-to-r from-primary/10 via-gold/10 to-accent/10 border border-primary/20 text-center">
             <p className="text-lg font-medium mb-2">
-              <span className="text-gradient-gold">2024</span> 年度征程圆满收官
+              <span className="text-gradient-gold">2025</span> 年度征程圆满收官
             </p>
             <p className="text-muted-foreground">
               从战略规划到成果落地，一步一个脚印，扎实推进创新发展
