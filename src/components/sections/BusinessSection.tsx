@@ -5,13 +5,13 @@ const businesses = [
   {
     icon: FileText,
     title: "智库咨询",
-    subtitle: "产业研究与政策咨询",
-    description: "为政府提供高质量的产业研究报告、政策建议与发展规划，助力区域经济高质量发展。",
-    highlights: ["产业规划研究", "政策效果评估", "投资决策支持"],
+    subtitle: "AI赋能的新型智库",
+    description: "以《河套深港科技创新合作区创新体系建设综合咨询研究课题》为典型代表，利用AI大模型全过程赋能，实现小团队高效率大产出。作为首个大型咨询项目AI全过程赋能的典型案例，已在内部做专题分享，代表智库咨询服务的进化升级。",
+    highlights: ["AI全流程赋能", "小团队大产出", "内部专题分享"],
     color: "from-primary to-primary/60",
     iconBg: "bg-primary/15",
     borderColor: "border-primary/30",
-    image: null, // 可替换为实际图片路径
+    image: null,
   },
   {
     icon: Globe,

@@ -9,9 +9,10 @@ const achievements = [
       "完成产品1.0版本核心功能开发与部署",
       "与多家投资机构开展联创合作，持续迭代优化",
       "AI产业链图谱工具上线并获得客户好评",
+      "🏆 AI产业链图谱荣获深圳市AI大赛最佳应用奖",
       "AI智能PPT生成工具实现内部试用推广",
     ],
-    progress: 85,
+    progress: 100,
     color: "bg-primary",
     borderColor: "border-primary/30",
   },
@@ -109,10 +110,10 @@ const AchievementSection = () => {
             <div className="flex items-center justify-center gap-3 mb-4">
               <span className="text-2xl font-bold">预估绩效等级</span>
               <ArrowRight className="w-6 h-6 text-gold-dark" />
-              <span className="text-4xl font-black text-gradient-gold">A级（良好）</span>
+              <span className="text-4xl font-black text-gradient-gold">S级（卓越）</span>
             </div>
             <p className="text-muted-foreground text-sm">
-              综合得分预计在80-90分区间，各项核心指标全面完成
+              超额完成各项核心指标，创新应用成果突出，获得外部权威认可
             </p>
           </div>
         </ScrollReveal>
