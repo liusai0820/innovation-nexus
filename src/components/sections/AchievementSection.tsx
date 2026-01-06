@@ -25,7 +25,7 @@ const achievements = [
       "推进产品及服务矩阵开发与运营体系建设",
       "实现创新中心与工赋中心业务协同",
     ],
-    progress: 90,
+    progress: 100,
     color: "bg-accent",
     borderColor: "border-accent/30",
   },
@@ -49,7 +49,7 @@ const AchievementSection = () => {
       {/* 背景装饰 */}
       <div className="absolute inset-0 bg-grid opacity-30" />
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
-      
+
       <div className="max-w-6xl mx-auto relative z-10">
         <ScrollReveal>
           <div className="text-center mb-16">
@@ -72,7 +72,7 @@ const AchievementSection = () => {
                     <div className={`w-3 h-3 rounded-full ${achievement.color}`} />
                     <h3 className="text-xl font-bold">{achievement.category}</h3>
                   </div>
-                  
+
                   {/* 进度条 */}
                   <div className="flex items-center gap-4">
                     <div className="w-40 h-2 rounded-full bg-secondary overflow-hidden">
@@ -86,7 +86,7 @@ const AchievementSection = () => {
                     </span>
                   </div>
                 </div>
-                
+
                 {/* 成果列表 */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {achievement.items.map((item, itemIndex) => (

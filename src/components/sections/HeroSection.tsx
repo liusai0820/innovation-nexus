@@ -1,91 +1,90 @@
-import { ChevronDown, Sparkles, ImageIcon, Award, Zap, Trophy } from "lucide-react";
+import { ChevronDown, Sparkles, Award, Zap, Trophy, TrendingUp, Users } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+      {/* 真实背景图 */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/hero_bg_new.png"
+          alt="Shenzhen Concept Skyline"
+          className="w-full h-full object-cover opacity-60"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
+      </div>
+
       {/* 背景特效 */}
-      <div className="absolute inset-0 bg-grid opacity-40" />
-      <div className="absolute inset-0 bg-particles" />
-      
+      <div className="absolute inset-0 bg-grid opacity-20 pointer-events-none" />
+      <div className="absolute inset-0 bg-particles opacity-40 pointer-events-none" />
+
       {/* 装饰光效 */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse-slow" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gold/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: "1s" }} />
-      
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[100px] animate-pulse-slow pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gold/15 rounded-full blur-[100px] animate-pulse-slow pointer-events-none" style={{ animationDelay: "1s" }} />
+
       {/* 主内容 */}
-      <div className="relative z-10 text-center px-6 max-w-6xl mx-auto pt-20">
+      <div className="relative z-10 text-center px-6 max-w-7xl mx-auto pt-20">
         {/* 标签 */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 backdrop-blur-sm border border-primary/30 mb-8 animate-fade-in">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 backdrop-blur-md border border-primary/30 mb-8 animate-fade-in shadow-[0_0_15px_rgba(var(--primary),0.3)]">
           <Sparkles className="w-4 h-4 text-primary" />
-          <span className="text-sm text-foreground/80">创新发展部 · 2025年度总结</span>
+          <span className="text-sm font-medium text-foreground/90 tracking-wide">创新发展部 · 2025年度总结</span>
         </div>
 
-        {/* 主标题 - 使用更有设计感的排版 */}
-        <h1 className="mb-8 leading-tight animate-slide-up">
-          <span className="block text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter">
-            <span className="text-foreground" style={{ fontFamily: "'Noto Serif SC', serif" }}>创新</span>
-            <span className="text-gradient-primary" style={{ fontFamily: "'Noto Serif SC', serif" }}>驱动</span>
+        {/* 主标题 */}
+        <h1 className="mb-10 leading-none animate-slide-up">
+          <span className="block text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter drop-shadow-2xl">
+            <span className="text-foreground" >创新</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light" >驱动</span>
           </span>
-          <span className="block text-5xl md:text-7xl lg:text-8xl font-light tracking-widest mt-2" style={{ fontFamily: "'Noto Serif SC', serif" }}>
+          <span className="block text-4xl md:text-7xl lg:text-8xl font-light tracking-[0.2em] mt-2 md:mt-4 opacity-90">
             <span className="text-foreground">智领</span>
-            <span className="text-gradient-gold">未来</span>
+            <span className="text-gradient-gold font-normal">未来</span>
           </span>
         </h1>
 
         {/* 副标题 */}
-        <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.3s" }}>
-          聚焦智库咨询、平台交付、AI应用三大核心领域
-          <br />
-          以创新思维推动业务高质量发展
+        <p className="text-xl md:text-2xl text-foreground font-medium mb-10 max-w-3xl mx-auto animate-fade-in leading-relaxed drop-shadow-sm" style={{ animationDelay: "0.3s" }}>
+          聚焦智库咨询 · 平台交付 · AI创新应用
+          <br className="hidden md:block" />
+          <span className="text-sm md:text-lg mt-2 block text-foreground/80 font-normal">以数据驱动决策，以技术赋能业务，构建高质量发展新引擎</span>
         </p>
 
         {/* 创新荣誉标签 */}
-        <div className="flex flex-wrap justify-center gap-4 mb-10 animate-fade-in" style={{ animationDelay: "0.5s" }}>
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold/15 border border-gold/40 shadow-sm">
-            <Trophy className="w-5 h-5 text-gold-dark" />
-            <span className="text-sm font-medium text-gold-dark">公司内部创新先锋队</span>
-          </div>
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/15 border border-primary/40 shadow-sm">
-            <Award className="w-5 h-5 text-primary" />
-            <span className="text-sm font-medium text-primary">率先AI转型部门</span>
-          </div>
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent/15 border border-accent/40 shadow-sm">
-            <Zap className="w-5 h-5 text-accent" />
-            <span className="text-sm font-medium text-accent">大模型应用落地先行者</span>
-          </div>
+        <div className="flex flex-wrap justify-center gap-4 mb-14 animate-fade-in" style={{ animationDelay: "0.5s" }}>
+          {[
+            { Icon: Trophy, text: "公司内部创新先锋队", color: "text-gold", border: "border-gold/30", bg: "bg-gold/5" },
+            { Icon: Award, text: "率先AI转型部门", color: "text-primary", border: "border-primary/30", bg: "bg-primary/5" },
+            { Icon: Zap, text: "大模型落地先行者", color: "text-accent", border: "border-accent/30", bg: "bg-accent/5" },
+          ].map((item, idx) => (
+            <div key={idx} className={`inline-flex items-center gap-2 px-6 py-3 rounded-full ${item.bg} backdrop-blur-md border ${item.border} shadow-lg hover:scale-105 transition-transform duration-300 cursor-default`}>
+              <item.Icon className={`w-5 h-5 ${item.color}`} />
+              <span className={`text-sm font-semibold ${item.color}`}>{item.text}</span>
+            </div>
+          ))}
         </div>
 
-        {/* 数据概览 */}
-        <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-10 animate-fade-in" style={{ animationDelay: "0.6s" }}>
-          <div className="text-center px-6 py-4 rounded-2xl bg-card/80 backdrop-blur-sm border border-border/50 glow-primary">
-            <div className="text-4xl md:text-5xl font-bold text-gradient-primary">15</div>
-            <div className="text-sm text-muted-foreground mt-1">团队成员</div>
-          </div>
-          <div className="text-center px-6 py-4 rounded-2xl bg-card/80 backdrop-blur-sm border border-border/50 glow-gold">
-            <div className="text-4xl md:text-5xl font-bold text-gradient-gold">990.75</div>
-            <div className="text-sm text-muted-foreground mt-1">年度收入(万元)</div>
-          </div>
-          <div className="text-center px-6 py-4 rounded-2xl bg-card/80 backdrop-blur-sm border border-border/50 glow-primary">
-            <div className="text-4xl md:text-5xl font-bold text-gradient-primary">378.81</div>
-            <div className="text-sm text-muted-foreground mt-1">年度利润(万元)</div>
-          </div>
-        </div>
-
-        {/* 主图占位区域 */}
-        <div className="animate-fade-in max-w-4xl mx-auto mb-8" style={{ animationDelay: "0.8s" }}>
-          <div className="image-placeholder h-72 md:h-96 rounded-3xl border-2 border-primary/20">
-            <div className="text-center">
-              <ImageIcon className="w-16 h-16 mx-auto mb-3 text-primary/40" />
-              <p className="text-lg font-medium text-foreground/60">首页主视觉图</p>
-              <p className="text-sm text-muted-foreground mt-1">建议：团队合影、AI产品界面截图、或科技感抽象图</p>
-              <p className="text-xs text-muted-foreground/60 mt-2">推荐尺寸: 1400x700</p>
+        {/* 核心数据高亮 (浮动卡片) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16 animate-fade-in" style={{ animationDelay: "0.7s" }}>
+          <div className="bg-card/90 backdrop-blur-md border border-white/20 p-6 rounded-2xl flex items-center justify-center gap-4 transform hover:-translate-y-1 transition-all duration-300 shadow-xl">
+            <div className="p-3 bg-primary/20 rounded-xl"><Users className="w-8 h-8 text-primary" /></div>
+            <div className="text-left">
+              <div className="text-3xl font-bold text-foreground">10<span className="text-sm text-muted-foreground ml-1">人</span></div>
+              <div className="text-xs text-uppercase text-muted-foreground tracking-wider">精英团队</div>
             </div>
           </div>
-        </div>
-
-        {/* 滚动提示 */}
-        <div className="flex flex-col items-center gap-2 text-muted-foreground animate-float pb-8">
-          <span className="text-sm">向下滚动探索更多</span>
-          <ChevronDown className="w-6 h-6" />
+          <div className="bg-card/90 backdrop-blur-md border border-white/20 p-6 rounded-2xl flex items-center justify-center gap-4 transform hover:-translate-y-1 transition-all duration-300 shadow-xl">
+            <div className="p-3 bg-gold/20 rounded-xl"><TrendingUp className="w-8 h-8 text-gold" /></div>
+            <div className="text-left">
+              <div className="text-3xl font-bold text-foreground">990<span className="text-sm text-muted-foreground ml-1">万</span></div>
+              <div className="text-xs text-uppercase text-muted-foreground tracking-wider">年度营收</div>
+            </div>
+          </div>
+          <div className="bg-card/90 backdrop-blur-md border border-white/20 p-6 rounded-2xl flex items-center justify-center gap-4 transform hover:-translate-y-1 transition-all duration-300 shadow-xl">
+            <div className="p-3 bg-accent/20 rounded-xl"><Award className="w-8 h-8 text-accent" /></div>
+            <div className="text-left">
+              <div className="text-3xl font-bold text-foreground">100<span className="text-sm text-muted-foreground ml-1">%</span></div>
+              <div className="text-xs text-uppercase text-muted-foreground tracking-wider">交付达成率</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
