@@ -1,12 +1,20 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend } from "recharts";
 import ScrollReveal from "../ScrollReveal";
 
-// 年度收入增长趋势数据（可替换为真实数据）
+// 年度收入增长趋势数据（真实数据）
 const yearlyData = [
-  { year: "2022", revenue: 520, cost: 380 },
-  { year: "2023", revenue: 680, cost: 450 },
-  { year: "2024", revenue: 820, cost: 530 },
-  { year: "2025", revenue: 990.75, cost: 611.94 },
+  { year: "2022", revenue: 572.2, cost: 455.8, headcount: 10, perCapita: 57.2 },
+  { year: "2023", revenue: 824.2, cost: 496.4, headcount: 11, perCapita: 74.9 },
+  { year: "2024", revenue: 1016.3, cost: 667.9, headcount: 11, perCapita: 92.4 },
+  { year: "2025", revenue: 990.75, cost: 611.94, headcount: 10, perCapita: 99.1 },
+];
+
+// 人均产值增长趋势数据
+const perCapitaData = [
+  { year: "2022", perCapita: 57.2, perCapitaCost: 45.6 },
+  { year: "2023", perCapita: 74.9, perCapitaCost: 45.1 },
+  { year: "2024", perCapita: 92.4, perCapitaCost: 60.7 },
+  { year: "2025", perCapita: 99.1, perCapitaCost: 61.2 },
 ];
 
 // 业务收入构成数据（可替换为真实数据）
@@ -35,8 +43,8 @@ const ChartSection = () => {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* 年度增长趋势柱状图 */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* 年度收入增长趋势柱状图 */}
           <ScrollReveal delay={100}>
             <div className="p-6 rounded-3xl bg-gradient-card border border-border/50 glow-primary">
               <h3 className="text-xl font-bold mb-6 text-center">年度收入增长趋势</h3>
@@ -80,7 +88,56 @@ const ChartSection = () => {
                 </ResponsiveContainer>
               </div>
               <p className="text-center text-sm text-muted-foreground mt-4">
-                年均增长率约 <span className="text-primary font-semibold">25%</span>，持续稳健发展
+                2022-2025年收入从 <span className="text-primary font-semibold">572万</span> 增长至 <span className="text-primary font-semibold">991万</span>
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {/* 人均产值增长趋势 */}
+          <ScrollReveal delay={150}>
+            <div className="p-6 rounded-3xl bg-gradient-card border border-border/50 glow-gold">
+              <h3 className="text-xl font-bold mb-6 text-center">人均产值增长趋势</h3>
+              <div className="h-80">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart data={perCapitaData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="hsl(35, 20%, 85%)" />
+                    <XAxis 
+                      dataKey="year" 
+                      stroke="hsl(30, 10%, 45%)"
+                      tick={{ fill: 'hsl(30, 10%, 45%)' }}
+                    />
+                    <YAxis 
+                      stroke="hsl(30, 10%, 45%)"
+                      tick={{ fill: 'hsl(30, 10%, 45%)' }}
+                      tickFormatter={(value) => `${value}万`}
+                    />
+                    <Tooltip 
+                      contentStyle={{ 
+                        backgroundColor: 'hsl(40, 30%, 98%)',
+                        border: '1px solid hsl(35, 20%, 85%)',
+                        borderRadius: '12px',
+                        boxShadow: '0 4px 20px rgba(0,0,0,0.1)'
+                      }}
+                      formatter={(value: number) => [`${value}万`, '']}
+                    />
+                    <Legend />
+                    <Bar 
+                      dataKey="perCapita" 
+                      name="人均产出" 
+                      fill="hsl(45, 90%, 55%)" 
+                      radius={[8, 8, 0, 0]}
+                    />
+                    <Bar 
+                      dataKey="perCapitaCost" 
+                      name="人均成本" 
+                      fill="hsl(35, 50%, 60%)" 
+                      radius={[8, 8, 0, 0]}
+                    />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+              <p className="text-center text-sm text-muted-foreground mt-4">
+                人均产值从 <span className="text-gold font-semibold">57.2万</span> 提升至 <span className="text-gold font-semibold">99.1万</span>，增长 <span className="text-gold font-semibold">73%</span>
               </p>
             </div>
           </ScrollReveal>
@@ -134,7 +191,7 @@ const ChartSection = () => {
         <ScrollReveal delay={400}>
           <div className="mt-8 p-4 rounded-xl bg-secondary/50 border border-border/30 text-center">
             <p className="text-sm text-muted-foreground">
-              💡 <span className="text-foreground">提示：</span>以上数据为示例数据，请根据实际情况替换
+              📊 <span className="text-foreground">数据来源：</span>创新发展部2022-2025年度经营数据
             </p>
           </div>
         </ScrollReveal>

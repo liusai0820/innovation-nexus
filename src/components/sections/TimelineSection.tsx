@@ -1,7 +1,7 @@
 import { Calendar, Flag, Rocket, Award, TrendingUp, ImageIcon } from "lucide-react";
 import ScrollReveal from "../ScrollReveal";
 
-// 时间轴数据（可替换为真实数据）
+// 时间轴数据
 const timelineEvents = [
   {
     quarter: "Q1",
@@ -11,7 +11,7 @@ const timelineEvents = [
     achievements: ["年度目标制定", "团队架构优化", "业务方向确定"],
     icon: Flag,
     color: "bg-primary",
-    image: null, // 可替换为实际图片路径
+    image: null,
   },
   {
     quarter: "Q2",
@@ -26,10 +26,10 @@ const timelineEvents = [
   {
     quarter: "Q3",
     period: "7月 - 9月",
-    title: "产品落地与市场拓展",
-    description: "产品1.0版本发布上线，工互平台完成规范化运营转型，开展外部合作。",
-    achievements: ["产品1.0上线", "平台运营转型", "联创合作启动"],
-    icon: TrendingUp,
+    title: "🏆 荣获AI大赛最佳应用奖",
+    description: "AI产业链图谱荣获深圳市AI大赛最佳应用奖，产品1.0版本发布上线，工互平台完成规范化运营转型。",
+    achievements: ["深圳市AI大赛最佳应用奖", "产品1.0上线", "平台运营转型"],
+    icon: Award,
     color: "bg-accent",
     image: null,
   },
@@ -37,9 +37,9 @@ const timelineEvents = [
     quarter: "Q4",
     period: "10月 - 12月",
     title: "成果收获与目标达成",
-    description: "全年收入目标超额完成，AI应用获得客户好评，团队能力显著提升。",
-    achievements: ["收入目标达成", "客户好评反馈", "年度总结汇报"],
-    icon: Award,
+    description: "全年收入目标超额完成，河套深港科创咨询项目AI全流程赋能，团队能力显著提升。",
+    achievements: ["收入目标达成", "河套项目交付", "年度总结汇报"],
+    icon: TrendingUp,
     color: "bg-primary",
     image: null,
   },
