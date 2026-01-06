@@ -1,0 +1,121 @@
+import { CheckCircle2, ArrowRight } from "lucide-react";
+import ScrollReveal from "../ScrollReveal";
+
+const achievements = [
+  {
+    category: "大模型应用开发",
+    items: [
+      "完成金融业务场景大模型产品定义与需求调研",
+      "完成产品1.0版本核心功能开发与部署",
+      "与多家投资机构开展联创合作，持续迭代优化",
+      "AI产业链图谱工具上线并获得客户好评",
+      "AI智能PPT生成工具实现内部试用推广",
+    ],
+    progress: 85,
+    color: "bg-primary",
+  },
+  {
+    category: "工业互联网平台运营",
+    items: [
+      "完成平台由探索期向规范化运营期过渡",
+      "签订年度委托运营服务协议",
+      "制定工赋中心年度KPI指标体系",
+      "推进产品及服务矩阵开发与运营体系建设",
+      "实现创新中心与工赋中心业务协同",
+    ],
+    progress: 90,
+    color: "bg-accent",
+  },
+  {
+    category: "经营业绩达成",
+    items: [
+      "年度收入990.75万元，超额完成收入目标",
+      "成本控制在611.94万元，成本管理良好",
+      "实现利润378.81万元，利润率达38.2%",
+      "收支比值161.9%，远超盈亏平衡线",
+    ],
+    progress: 100,
+    color: "bg-gold",
+  },
+];
+
+const AchievementSection = () => {
+  return (
+    <section className="py-24 px-6 bg-background relative overflow-hidden">
+      {/* 背景装饰 */}
+      <div className="absolute inset-0 bg-grid opacity-20" />
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
+      
+      <div className="max-w-6xl mx-auto relative z-10">
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              年度<span className="text-gradient-gold">工作成果</span>
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">
+              对标绩效目标，全面推进各项重点工作任务
+            </p>
+          </div>
+        </ScrollReveal>
+
+        <div className="space-y-8">
+          {achievements.map((achievement, index) => (
+            <ScrollReveal key={achievement.category} delay={index * 150}>
+              <div className="p-8 rounded-3xl bg-gradient-card border border-border/50 hover:border-primary/30 transition-all duration-300">
+                {/* 头部 */}
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+                  <div className="flex items-center gap-3">
+                    <div className={`w-3 h-3 rounded-full ${achievement.color}`} />
+                    <h3 className="text-xl font-bold">{achievement.category}</h3>
+                  </div>
+                  
+                  {/* 进度条 */}
+                  <div className="flex items-center gap-4">
+                    <div className="w-40 h-2 rounded-full bg-secondary overflow-hidden">
+                      <div
+                        className={`h-full rounded-full ${achievement.color} transition-all duration-1000`}
+                        style={{ width: `${achievement.progress}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-muted-foreground font-medium">
+                      完成度 {achievement.progress}%
+                    </span>
+                  </div>
+                </div>
+                
+                {/* 成果列表 */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {achievement.items.map((item, itemIndex) => (
+                    <div
+                      key={itemIndex}
+                      className="flex items-start gap-3 p-3 rounded-xl bg-secondary/30 hover:bg-secondary/50 transition-colors"
+                    >
+                      <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-muted-foreground">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+
+        {/* 绩效等级 */}
+        <ScrollReveal delay={500}>
+          <div className="mt-12 p-8 rounded-3xl bg-gradient-to-r from-gold/10 via-gold/5 to-gold/10 border border-gold/30 text-center">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <span className="text-2xl font-bold">预估绩效等级</span>
+              <ArrowRight className="w-6 h-6 text-gold" />
+              <span className="text-4xl font-black text-gradient-gold">A级（良好）</span>
+            </div>
+            <p className="text-muted-foreground text-sm">
+              综合得分预计在80-90分区间，各项核心指标全面完成
+            </p>
+          </div>
+        </ScrollReveal>
+      </div>
+    </section>
+  );
+};
+
+export default AchievementSection;
