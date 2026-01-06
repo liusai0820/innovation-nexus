@@ -13,6 +13,7 @@ const achievements = [
     ],
     progress: 85,
     color: "bg-primary",
+    borderColor: "border-primary/30",
   },
   {
     category: "工业互联网平台运营",
@@ -25,6 +26,7 @@ const achievements = [
     ],
     progress: 90,
     color: "bg-accent",
+    borderColor: "border-accent/30",
   },
   {
     category: "经营业绩达成",
@@ -36,6 +38,7 @@ const achievements = [
     ],
     progress: 100,
     color: "bg-gold",
+    borderColor: "border-gold/30",
   },
 ];
 
@@ -43,7 +46,7 @@ const AchievementSection = () => {
   return (
     <section className="py-24 px-6 bg-background relative overflow-hidden">
       {/* 背景装饰 */}
-      <div className="absolute inset-0 bg-grid opacity-20" />
+      <div className="absolute inset-0 bg-grid opacity-30" />
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
       
       <div className="max-w-6xl mx-auto relative z-10">
@@ -61,7 +64,7 @@ const AchievementSection = () => {
         <div className="space-y-8">
           {achievements.map((achievement, index) => (
             <ScrollReveal key={achievement.category} delay={index * 150}>
-              <div className="p-8 rounded-3xl bg-gradient-card border border-border/50 hover:border-primary/30 transition-all duration-300">
+              <div className={`p-8 rounded-3xl bg-gradient-card border ${achievement.borderColor} hover:shadow-lg transition-all duration-300`}>
                 {/* 头部 */}
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
                   <div className="flex items-center gap-3">
@@ -88,10 +91,10 @@ const AchievementSection = () => {
                   {achievement.items.map((item, itemIndex) => (
                     <div
                       key={itemIndex}
-                      className="flex items-start gap-3 p-3 rounded-xl bg-secondary/30 hover:bg-secondary/50 transition-colors"
+                      className="flex items-start gap-3 p-3 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors"
                     >
-                      <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-muted-foreground">{item}</span>
+                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-foreground/80">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -102,10 +105,10 @@ const AchievementSection = () => {
 
         {/* 绩效等级 */}
         <ScrollReveal delay={500}>
-          <div className="mt-12 p-8 rounded-3xl bg-gradient-to-r from-gold/10 via-gold/5 to-gold/10 border border-gold/30 text-center">
+          <div className="mt-12 p-8 rounded-3xl bg-gradient-to-r from-gold/10 via-gold/5 to-gold/10 border border-gold/30 text-center shadow-lg">
             <div className="flex items-center justify-center gap-3 mb-4">
               <span className="text-2xl font-bold">预估绩效等级</span>
-              <ArrowRight className="w-6 h-6 text-gold" />
+              <ArrowRight className="w-6 h-6 text-gold-dark" />
               <span className="text-4xl font-black text-gradient-gold">A级（良好）</span>
             </div>
             <p className="text-muted-foreground text-sm">
