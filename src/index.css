@@ -6,46 +6,46 @@
 
 @layer base {
   :root {
-    /* 深蓝科技主题 */
-    --background: 222 47% 8%;
-    --foreground: 210 40% 98%;
+    /* 浅色背景+中金配色主题 */
+    --background: 40 30% 98%;
+    --foreground: 30 15% 15%;
 
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 98%;
+    --card: 40 25% 96%;
+    --card-foreground: 30 15% 15%;
 
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 40 25% 96%;
+    --popover-foreground: 30 15% 15%;
 
-    --primary: 199 89% 48%;
-    --primary-foreground: 222 47% 8%;
+    --primary: 36 80% 50%;
+    --primary-foreground: 40 30% 98%;
 
-    --secondary: 222 47% 16%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 40 20% 92%;
+    --secondary-foreground: 30 15% 25%;
 
-    --muted: 222 30% 20%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 40 15% 88%;
+    --muted-foreground: 30 10% 45%;
 
-    --accent: 168 76% 42%;
-    --accent-foreground: 222 47% 8%;
+    --accent: 30 70% 45%;
+    --accent-foreground: 40 30% 98%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 40 30% 98%;
 
-    --border: 222 30% 20%;
-    --input: 222 30% 20%;
-    --ring: 199 89% 48%;
+    --border: 35 20% 85%;
+    --input: 35 20% 85%;
+    --ring: 36 80% 50%;
 
     --radius: 0.75rem;
 
-    /* 自定义渐变和特效 */
-    --gradient-hero: linear-gradient(135deg, hsl(222 47% 8%) 0%, hsl(222 47% 16%) 50%, hsl(199 89% 20%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(222 47% 14%) 0%, hsl(222 47% 10%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(199 89% 48%) 0%, hsl(168 76% 42%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(45 93% 47%) 0%, hsl(36 93% 50%) 100%);
+    /* 金色系渐变和特效 */
+    --gradient-hero: linear-gradient(135deg, hsl(40 30% 98%) 0%, hsl(40 25% 95%) 50%, hsl(36 30% 92%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(40 30% 99%) 0%, hsl(40 25% 96%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(36 80% 50%) 0%, hsl(30 70% 45%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(45 90% 55%) 0%, hsl(36 85% 50%) 100%);
     
-    --glow-primary: 0 0 40px hsl(199 89% 48% / 0.3);
-    --glow-accent: 0 0 40px hsl(168 76% 42% / 0.3);
-    --glow-gold: 0 0 40px hsl(45 93% 47% / 0.3);
+    --glow-primary: 0 8px 30px hsl(36 80% 50% / 0.15);
+    --glow-accent: 0 8px 30px hsl(30 70% 45% / 0.15);
+    --glow-gold: 0 8px 30px hsl(45 90% 55% / 0.2);
 
     /* 动画时间 */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -138,8 +138,8 @@
     position: absolute;
     inset: -2px;
     border-radius: inherit;
-    background: var(--gradient-accent);
-    opacity: 0.5;
+    background: var(--gradient-gold);
+    opacity: 0.3;
     filter: blur(8px);
     z-index: -1;
   }
@@ -147,16 +147,22 @@
   /* 网格背景 */
   .bg-grid {
     background-image: 
-      linear-gradient(to right, hsl(222 30% 20% / 0.3) 1px, transparent 1px),
-      linear-gradient(to bottom, hsl(222 30% 20% / 0.3) 1px, transparent 1px);
+      linear-gradient(to right, hsl(35 20% 85% / 0.5) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(35 20% 85% / 0.5) 1px, transparent 1px);
     background-size: 60px 60px;
   }
 
-  /* 粒子效果背景 */
+  /* 装饰效果背景 */
   .bg-particles {
-    background-image: radial-gradient(circle at 20% 80%, hsl(199 89% 48% / 0.15) 0%, transparent 50%),
-                      radial-gradient(circle at 80% 20%, hsl(168 76% 42% / 0.15) 0%, transparent 50%),
-                      radial-gradient(circle at 40% 40%, hsl(45 93% 47% / 0.08) 0%, transparent 40%);
+    background-image: radial-gradient(circle at 20% 80%, hsl(36 80% 50% / 0.08) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 20%, hsl(30 70% 45% / 0.08) 0%, transparent 50%),
+                      radial-gradient(circle at 40% 40%, hsl(45 90% 55% / 0.05) 0%, transparent 40%);
+  }
+
+  /* 图片占位区域 */
+  .image-placeholder {
+    @apply bg-gradient-to-br from-secondary via-muted to-secondary border-2 border-dashed border-primary/30 rounded-xl flex items-center justify-center text-muted-foreground;
+    min-height: 200px;
   }
 }
 
@@ -166,8 +172,8 @@
 }
 
 @keyframes glow {
-  0%, 100% { opacity: 0.5; filter: blur(8px); }
-  50% { opacity: 0.8; filter: blur(12px); }
+  0%, 100% { opacity: 0.3; filter: blur(8px); }
+  50% { opacity: 0.5; filter: blur(12px); }
 }
 
 @keyframes slideUp {
@@ -197,14 +203,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(222 47% 8%);
+  background: hsl(40 30% 96%);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(199 89% 48% / 0.5);
+  background: hsl(36 80% 50% / 0.4);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(199 89% 48% / 0.8);
+  background: hsl(36 80% 50% / 0.6);
 }

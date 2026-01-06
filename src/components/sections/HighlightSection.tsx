@@ -10,7 +10,7 @@ const highlights = [
     suffix: "万",
     color: "text-primary",
     bgColor: "bg-primary/10",
-    glowClass: "glow-primary",
+    borderColor: "border-primary/30",
   },
   {
     icon: Target,
@@ -19,16 +19,16 @@ const highlights = [
     suffix: "万",
     color: "text-accent",
     bgColor: "bg-accent/10",
-    glowClass: "glow-accent",
+    borderColor: "border-accent/30",
   },
   {
     icon: Zap,
     label: "年度利润",
     value: 378.81,
     suffix: "万",
-    color: "text-gold",
+    color: "text-gold-dark",
     bgColor: "bg-gold/10",
-    glowClass: "glow-gold",
+    borderColor: "border-gold/30",
   },
   {
     icon: Users,
@@ -37,7 +37,7 @@ const highlights = [
     suffix: "%",
     color: "text-primary",
     bgColor: "bg-primary/10",
-    glowClass: "glow-primary",
+    borderColor: "border-primary/30",
   },
 ];
 
@@ -45,7 +45,7 @@ const HighlightSection = () => {
   return (
     <section className="py-24 px-6 bg-background relative overflow-hidden">
       {/* 背景装饰 */}
-      <div className="absolute inset-0 bg-grid opacity-20" />
+      <div className="absolute inset-0 bg-grid opacity-30" />
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
       
       <div className="max-w-6xl mx-auto relative z-10">
@@ -63,7 +63,7 @@ const HighlightSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {highlights.map((item, index) => (
             <ScrollReveal key={item.label} delay={index * 100}>
-              <div className={`group relative p-6 rounded-2xl bg-gradient-card border border-border/50 hover:border-primary/50 transition-all duration-300 hover:${item.glowClass}`}>
+              <div className={`group relative p-6 rounded-2xl bg-gradient-card border ${item.borderColor} hover:shadow-lg transition-all duration-300`}>
                 {/* 图标 */}
                 <div className={`w-14 h-14 rounded-xl ${item.bgColor} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                   <item.icon className={`w-7 h-7 ${item.color}`} />
@@ -83,7 +83,7 @@ const HighlightSection = () => {
                 <div className="text-muted-foreground">{item.label}</div>
 
                 {/* 装饰线 */}
-                <div className="absolute bottom-0 left-6 right-6 h-1 rounded-full bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className={`absolute bottom-0 left-6 right-6 h-1 rounded-full bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity`} />
               </div>
             </ScrollReveal>
           ))}
@@ -91,7 +91,7 @@ const HighlightSection = () => {
 
         {/* 补充说明 */}
         <ScrollReveal delay={500}>
-          <div className="mt-12 p-6 rounded-2xl bg-secondary/30 border border-border/50 text-center">
+          <div className="mt-12 p-6 rounded-2xl bg-card border border-border/50 text-center shadow-sm">
             <p className="text-muted-foreground">
               <span className="text-foreground font-semibold">收支健康度达标</span> · 
               部门收入/成本比值 = <span className="text-gradient-gold font-bold">161.9%</span>，
