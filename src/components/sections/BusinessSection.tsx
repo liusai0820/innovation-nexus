@@ -11,7 +11,7 @@ const businesses = [
     color: "from-primary to-primary/60",
     iconBg: "bg-primary/15",
     borderColor: "border-primary/30",
-    image: "/ai_think_tank.png",
+    image: "/image_1_consulting.png",
   },
   {
     icon: Globe,
@@ -22,7 +22,7 @@ const businesses = [
     color: "from-accent to-accent/60",
     iconBg: "bg-accent/15",
     borderColor: "border-accent/30",
-    image: "/investment_platform.png",
+    image: "/image_2_platform.png",
   },
   {
     icon: Brain,
@@ -33,7 +33,7 @@ const businesses = [
     color: "from-gold to-gold-light",
     iconBg: "bg-gold/15",
     borderColor: "border-gold/30",
-    image: "/ai_innovation.png",
+    image: "/image_3_innovation.png",
   },
 ];
 

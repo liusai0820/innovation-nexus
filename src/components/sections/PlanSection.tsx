@@ -16,6 +16,7 @@ const plans = [
     subtitle: "从单点工具到产品化体系",
     description: "基于SlideAI、智绘链图等已验证产品，构建标准化AI工具产品线，形成可复制、可销售的产品矩阵。",
     badges: ["产品化", "可复制"],
+    image: "/plan_1_product.png",
     content: {
       foundation: {
         title: "2025已验证",
@@ -48,6 +49,7 @@ const plans = [
     subtitle: "服务政府数字化转型",
     description: "依托发改委体系资源优势，面向政府部门提供产业分析、招商引资、政策研究等场景的AI应用定制服务。",
     badges: ["政务场景", "资源优势"],
+    image: "/plan_2_gov.png",
     content: {
       foundation: {
         title: "天然优势",
@@ -80,6 +82,7 @@ const plans = [
     subtitle: "对标国际顶尖咨询实践",
     description: "学习麦肯锡、BCG等国际咨询机构的AI业务模式，帮助企业识别AI落地机会、制定转型规划并交付落地。",
     badges: ["高端咨询", "国际对标"],
+    image: "/plan_3_enterprise.png",
     content: {
       benchmark: {
         title: "对标学习",
@@ -112,6 +115,7 @@ const plans = [
     subtitle: "轻资产模式规模化",
     description: "与AI技术厂商、产业园区、行业协会建立合作生态，以能力输出和联合运营模式实现业务规模化。",
     badges: ["生态共建", "轻资产"],
+    image: "/plan_4_ecosystem.png",
     content: {
       partners: {
         title: "合作方向",
@@ -171,37 +175,64 @@ const PlanSection = () => {
               <Dialog>
                 <DialogTrigger asChild>
                   <div
-                    className="group h-full p-8 rounded-[2.5rem] bg-gradient-to-br from-card to-card/50 border border-border hover:border-primary/50 hover:shadow-2xl transition-all duration-500 cursor-pointer relative overflow-hidden text-left w-full hover:-translate-y-2"
+                    className="group h-full p-6 rounded-[2.5rem] bg-gradient-to-br from-card to-card/50 border border-border hover:border-primary/50 hover:shadow-2xl transition-all duration-500 cursor-pointer relative overflow-hidden text-left w-full hover:-translate-y-2 flex flex-col"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                    <div className="absolute top-8 right-8">
-                      <div className="w-10 h-10 rounded-full bg-secondary text-muted-foreground flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                    <div className="absolute top-8 right-8 z-20">
+                      <div className="w-10 h-10 rounded-full bg-secondary/80 backdrop-blur-sm text-muted-foreground flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300 shadow-sm border border-border/50">
                         <ArrowRight className="w-5 h-5" />
                       </div>
                     </div>
 
-                    <div className="mb-6">
-                      <div className={`w-16 h-16 rounded-2xl ${plan.priorityBg} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                        <plan.icon className="w-8 h-8" />
+                    {/* Check if image exists, use fallback if not - simpler check in JSX since we added property to all */}
+                    <div className="relative mb-6 overflow-hidden rounded-2xl h-56 w-full shadow-lg shrink-0 group-hover:shadow-xl transition-all duration-500 bg-secondary/30">
+                      {plan.image ? (
+                        <img
+                          src={plan.image}
+                          alt={plan.title}
+                          onError={(e) => {
+                            // Fallback to stylized placeholder on error
+                            e.currentTarget.style.display = 'none';
+                            e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                          }}
+                          className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                        />
+                      ) : null}
+
+                      {/* Fallback container (hidden if image loads) */}
+                      <div className={`absolute inset-0 flex items-center justify-center ${plan.image ? 'hidden' : ''}`}>
+                        <plan.icon className="w-16 h-16 opacity-10 text-foreground" />
                       </div>
-                      <div className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-3 tracking-wide uppercase ${plan.priorityBg} bg-opacity-20`}>
-                        {plan.priority}
+
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40" />
+
+                      <div className={`absolute bottom-4 left-4 w-12 h-12 rounded-xl ${plan.priorityBg} backdrop-blur-md flex items-center justify-center border border-white/10 shadow-lg`}>
+                        <plan.icon className="w-6 h-6" />
                       </div>
-                      <h3 className="text-2xl font-bold mb-2">{plan.title}</h3>
-                      <p className="text-sm font-medium text-muted-foreground mb-4">{plan.subtitle}</p>
                     </div>
 
-                    <p className="text-muted-foreground/80 text-sm leading-relaxed mb-6 line-clamp-2">
-                      {plan.description}
-                    </p>
+                    <div className="flex-grow flex flex-col">
+                      <div className="mb-3">
+                        <div className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-0 tracking-wide uppercase ${plan.priorityBg} bg-opacity-20`}>
+                          {plan.priority}
+                        </div>
+                      </div>
 
-                    <div className="flex gap-2">
-                      {plan.badges.map((badge, i) => (
-                        <span key={i} className="px-3 py-1 bg-secondary rounded-lg text-xs font-medium text-secondary-foreground border border-border/50">
-                          {badge}
-                        </span>
-                      ))}
+                      <h3 className="text-2xl font-bold mb-2">{plan.title}</h3>
+                      <p className="text-sm font-medium text-muted-foreground mb-4">{plan.subtitle}</p>
+
+                      <p className="text-muted-foreground/80 text-sm leading-relaxed mb-6 line-clamp-2">
+                        {plan.description}
+                      </p>
+
+                      <div className="flex gap-2 mt-auto">
+                        {plan.badges.map((badge, i) => (
+                          <span key={i} className="px-3 py-1 bg-secondary rounded-lg text-xs font-medium text-secondary-foreground border border-border/50">
+                            {badge}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </DialogTrigger>
