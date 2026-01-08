@@ -6,7 +6,7 @@ const highlights = [
   {
     icon: TrendingUp,
     label: "年度收入",
-    value: 990.75,
+    value: 1050.2,
     suffix: "万",
     color: "text-primary",
     bgColor: "bg-primary/10",
@@ -24,7 +24,7 @@ const highlights = [
   {
     icon: Zap,
     label: "年度利润",
-    value: 378.81,
+    value: 438.26,
     suffix: "万",
     color: "text-gold-dark",
     bgColor: "bg-gold/10",
@@ -33,7 +33,7 @@ const highlights = [
   {
     icon: Users,
     label: "利润率",
-    value: 38.2,
+    value: 41.7,
     suffix: "%",
     color: "text-primary",
     bgColor: "bg-primary/10",
@@ -47,7 +47,7 @@ const HighlightSection = () => {
       {/* 背景装饰 */}
       <div className="absolute inset-0 bg-grid opacity-30" />
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
-      
+
       <div className="max-w-6xl mx-auto relative z-10">
         <ScrollReveal>
           <div className="text-center mb-16">
@@ -68,7 +68,7 @@ const HighlightSection = () => {
                 <div className={`w-14 h-14 rounded-xl ${item.bgColor} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                   <item.icon className={`w-7 h-7 ${item.color}`} />
                 </div>
-                
+
                 {/* 数值 */}
                 <div className={`text-4xl font-bold mb-2 ${item.color}`}>
                   <AnimatedNumber
@@ -78,7 +78,7 @@ const HighlightSection = () => {
                     duration={2500}
                   />
                 </div>
-                
+
                 {/* 标签 */}
                 <div className="text-muted-foreground">{item.label}</div>
 
@@ -93,8 +93,8 @@ const HighlightSection = () => {
         <ScrollReveal delay={500}>
           <div className="mt-12 p-6 rounded-2xl bg-card border border-border/50 text-center shadow-sm">
             <p className="text-muted-foreground">
-              <span className="text-foreground font-semibold">收支健康度达标</span> · 
-              部门收入/成本比值 = <span className="text-gradient-gold font-bold">161.9%</span>，
+              <span className="text-foreground font-semibold">收支健康度达标</span> ·
+              部门收入/成本比值 = <span className="text-gradient-gold font-bold">171.6%</span>，
               超额完成盈亏平衡目标
             </p>
           </div>

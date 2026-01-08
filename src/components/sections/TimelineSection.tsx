@@ -37,7 +37,7 @@ const timelineEvents = [
     quarter: "Q4",
     period: "10月 - 12月",
     title: "成果收获与目标达成",
-    description: "全年营收目标提前一个月达成，总营收突破990万元。河套深港科创咨询项目顺利通过中期验收，实现AI全流程赋能的标杆案例落地。PPT生成应用内部公测",
+    description: "全年营收目标提前达成，总营收突破1050万元。河套深港科创咨询项目顺利通过中期验收，实现AI全流程赋能的标杆案例落地。PPT生成应用内部公测",
     achievements: ["营收目标提前达成", "河套项目验收", "AI产品内部发布"],
     icon: TrendingUp,
     color: "bg-primary",
