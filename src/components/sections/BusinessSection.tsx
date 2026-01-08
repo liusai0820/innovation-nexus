@@ -4,7 +4,7 @@ import ScrollReveal from "../ScrollReveal";
 const businesses = [
   {
     icon: FileText,
-    title: "智库咨询",
+    title: "智库咨询转型",
     subtitle: "AI赋能的新型智库",
     description: "以《河套深港科技创新合作区创新体系建设综合咨询研究课题》为典型代表，利用AI大模型全过程赋能，实现小团队高效率大产出。作为首个大型咨询项目AI全过程赋能的典型案例，已在内部做专题分享，代表智库咨询服务的进化升级。",
     highlights: ["AI全流程赋能", "小团队大产出", "内部专题分享"],
@@ -15,7 +15,7 @@ const businesses = [
   },
   {
     icon: Globe,
-    title: "信息平台交付",
+    title: "平台运营落地",
     subtitle: "招商系统与数据平台",
     description: "构建现代化招商引资系统，整合产业数据资源，打造一站式数字化招商服务平台。通过数据驱动，精准匹配企业需求与园区资源，提升招商引资效率。",
     highlights: ["招商管理系统", "产业数据平台", "智能匹配引擎"],
@@ -26,8 +26,8 @@ const businesses = [
   },
   {
     icon: Brain,
-    title: "AI创新应用",
-    subtitle: "大模型场景化落地",
+    title: "创新应用开发",
+    subtitle: "大模型解决方案落地",
     description: "深耕AI技术应用场景，开发产业链图谱、智能PPT、思维导图等创新工具，赋能政务工作效率提升。将前沿技术转化为实际生产力。",
     highlights: ["AI画产业链图谱", "AI智能PPT生成", "AI思维导图绘制"],
     color: "from-gold to-gold-light",

@@ -7,7 +7,6 @@ const navItems = [
   { label: "数据分析", href: "#charts" },
   { label: "核心业务", href: "#business" },
   { label: "项目案例", href: "#projects" },
-  { label: "时间轴", href: "#timeline" },
   { label: "工作成果", href: "#achievements" },
   { label: "明年展望", href: "#plans" },
 ];
@@ -36,8 +35,8 @@ const Navigation = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? "bg-background/90 backdrop-blur-lg border-b border-border/50 shadow-sm"
-          : "bg-transparent"
+        ? "bg-background/90 backdrop-blur-lg border-b border-border/50 shadow-sm"
+        : "bg-transparent"
         }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4">
