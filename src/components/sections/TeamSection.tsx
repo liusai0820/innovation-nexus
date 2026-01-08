@@ -76,7 +76,7 @@ const TeamSection = () => {
 
               <div className="flex flex-wrap justify-center gap-6 text-center">
                 {[
-                  { num: "11", label: "团队成员", color: "text-primary" },
+                  { num: "10", label: "团队成员", color: "text-primary" },
                   { num: "100%", label: "全情投入", color: "text-gold" },
                   { num: "∞", label: "无限可能", color: "text-accent" },
                 ].map((stat, idx) => (

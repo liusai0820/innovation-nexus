@@ -4,7 +4,7 @@ import HighlightSection from "@/components/sections/HighlightSection";
 import ChartSection from "@/components/sections/ChartSection";
 import BusinessSection from "@/components/sections/BusinessSection";
 import ProjectCaseSection from "@/components/sections/ProjectCaseSection";
-import TimelineSection from "@/components/sections/TimelineSection";
+
 import AchievementSection from "@/components/sections/AchievementSection";
 import PlanSection from "@/components/sections/PlanSection";
 import TeamSection from "@/components/sections/TeamSection";
@@ -14,11 +14,11 @@ const Index = () => {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Navigation />
-      
+
       <div id="hero">
         <HeroSection />
       </div>
-      
+
       <div id="highlights">
         <HighlightSection />
       </div>
@@ -26,7 +26,7 @@ const Index = () => {
       <div id="charts">
         <ChartSection />
       </div>
-      
+
       <div id="business">
         <BusinessSection />
       </div>
@@ -35,20 +35,17 @@ const Index = () => {
         <ProjectCaseSection />
       </div>
 
-      <div id="timeline">
-        <TimelineSection />
-      </div>
-      
+
       <div id="achievements">
         <AchievementSection />
       </div>
-      
+
       <div id="plans">
         <PlanSection />
       </div>
-      
+
       <TeamSection />
-      
+
       <FooterSection />
     </main>
   );
