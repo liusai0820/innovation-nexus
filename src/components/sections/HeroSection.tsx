@@ -67,7 +67,7 @@ const HeroSection = () => {
           <div className="bg-card/90 backdrop-blur-md border border-white/20 p-6 rounded-2xl flex items-center justify-center gap-4 transform hover:-translate-y-1 transition-all duration-300 shadow-xl">
             <div className="p-3 bg-primary/20 rounded-xl"><Users className="w-8 h-8 text-primary" /></div>
             <div className="text-left">
-              <div className="text-3xl font-bold text-foreground">10<span className="text-sm text-muted-foreground ml-1">人</span></div>
+              <div className="text-3xl font-bold text-foreground">12<span className="text-sm text-muted-foreground ml-1">人</span></div>
               <div className="text-xs text-uppercase text-muted-foreground tracking-wider">精英团队</div>
             </div>
           </div>

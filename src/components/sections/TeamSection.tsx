@@ -52,22 +52,51 @@ const TeamSection = () => {
 
             <div className="bg-card rounded-[1.9rem] p-8 md:p-12 overflow-hidden relative">
 
-              {/* 团队照片区域 */}
-              <div className="relative mb-10 rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
-                <img
-                  src="/shenzhen_team_11_people.png"
-                  alt="Innovation Team"
-                  className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-1000"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60" />
-                <div className="absolute bottom-6 left-6 text-left">
-                  <p className="text-white text-2xl font-bold">Innovation Team</p>
-                  <p className="text-white/80 text-sm">Shenzhen, 2025</p>
+              {/* 团队照片区域 - 增强版 */}
+              <div className="relative mb-10 group">
+                {/* 外层光晕效果 */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-gold/40 via-primary/40 to-gold/40 rounded-3xl blur-lg opacity-50 group-hover:opacity-80 transition-all duration-700 animate-pulse" />
+
+                {/* 主容器 */}
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-gold/20 group-hover:border-gold/40 transition-all duration-500">
+
+                  {/* 右上角装饰星星 */}
+                  <div className="absolute top-4 right-4 z-20 flex gap-1">
+                    <Sparkles className="w-5 h-5 text-gold/80 animate-pulse" style={{ animationDelay: '0s' }} />
+                    <Sparkles className="w-4 h-4 text-gold/60 animate-pulse" style={{ animationDelay: '0.3s' }} />
+                    <Sparkles className="w-3 h-3 text-gold/40 animate-pulse" style={{ animationDelay: '0.6s' }} />
+                  </div>
+
+                  {/* 图片 */}
+                  <img
+                    src="/shenzhen_team_11_people.jpg"
+                    alt="Innovation Team"
+                    className="w-full h-[420px] object-cover transform group-hover:scale-[1.03] transition-all duration-1000 ease-out"
+                  />
+
+                  {/* 多层渐变遮罩 */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-gold/10 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+                  {/* 底部信息区 */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <div className="text-left">
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="w-8 h-0.5 bg-gradient-to-r from-gold to-transparent" />
+                        <span className="text-gold/80 text-xs font-medium uppercase tracking-widest">Innovation Team</span>
+                      </div>
+                      <p className="text-white text-2xl font-bold tracking-tight">创新发展部</p>
+                      <p className="text-white/60 text-sm mt-1">深圳 · 2025</p>
+                    </div>
+                  </div>
+
+                  {/* 悬停时的扫光效果 */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
                 </div>
               </div>
 
               <p className="text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl mx-auto">
-                <span className="text-primary font-bold text-2xl">10</span> 位伙伴，<span className="text-gold font-bold text-2xl">365</span> 个奋斗日夜。
+                <span className="text-primary font-bold text-2xl">12</span> 位伙伴，<span className="text-gold font-bold text-2xl">365</span> 个奋斗日夜。
                 <br />
                 从智库咨询到AI创新，从平台交付到大模型落地，
                 <br />
@@ -76,7 +105,7 @@ const TeamSection = () => {
 
               <div className="flex flex-wrap justify-center gap-6 text-center">
                 {[
-                  { num: "10", label: "团队成员", color: "text-primary" },
+                  { num: "12", label: "团队成员", color: "text-primary" },
                   { num: "100%", label: "全情投入", color: "text-gold" },
                   { num: "∞", label: "无限可能", color: "text-accent" },
                 ].map((stat, idx) => (
