@@ -8,7 +8,126 @@ import {
 } from "../ui/dialog";
 
 // 2026战略规划：创新+ 核心战略
-// 基于2025年AI产品实践，规划4个战略方向
+// 四个核心战略方向 + 战略路径对比
+const strategicPlans = [
+  {
+    id: 0,
+    title: "底层技术架构优化升级",
+    subtitle: "夯实技术底座，提升系统韧性",
+    description: "持续优化Deep Research深度研究框架、搜索底座国产化平替、语义排序与智能检索等核心技术，为上层产品提供稳定可靠的技术支撑。",
+    badges: ["技术底座", "高可靠性"],
+    image: "/plan_1_product.png",
+    priority: "核心基础",
+    color: "text-primary",
+    priorityBg: "bg-primary/10 text-primary",
+    content: {
+      foundation: {
+        title: "核心技术方向",
+        items: [
+          { name: "Deep Research框架", desc: "深度研究架构优化与性能提升", status: "进行中" },
+          { name: "搜索底座平替", desc: "国产化平替方案，化解API停服风险", status: "已完成" },
+          { name: "语义排序优化", desc: "智能检索与语义理解能力", status: "已完成" },
+          { name: "系统韧性设计", desc: "高可用性与故障恢复能力", status: "进行中" },
+        ]
+      },
+      achievements: "成功化解Bing API停服危机，构建具备极高韧性的技术底座，支撑400+篇报告生成，系统可用性达99.9%。",
+      targets: [
+        { label: "系统可用性", value: "99.9%", desc: "高可靠性保障" },
+        { label: "报告产能", value: "400+", unit: "篇/年" },
+        { label: "性能提升", value: "40%", desc: "检索效率提升" },
+      ]
+    }
+  },
+  {
+    id: 1,
+    title: "AI工具产品化拓展开发",
+    subtitle: "从单点工具到产品矩阵",
+    description: "基于已验证的AI工具进行产品化改造，建立统一的产品架构和用户体系，形成可复制、可销售的AI工具产品矩阵。",
+    badges: ["产品化", "可复制"],
+    image: "/ai_ppt_tool.png",
+    priority: "核心引擎",
+    color: "text-primary",
+    priorityBg: "bg-primary/10 text-primary",
+    content: {
+      foundation: {
+        title: "2025已验证产品",
+        items: [
+          { name: "SlideAI智能PPT", desc: "一键生成专业演示文稿", link: "ppt.gwy.life", status: "已上线" },
+          { name: "智绘链图产业分析", desc: "AI驱动产业链可视化分析", link: "diki.gwy.life", status: "已上线" },
+          { name: "AI思维导图", desc: "智能结构化思维工具", status: "内测中" },
+          { name: "金融投研助手", desc: "面向机构的智能分析工具", status: "开发中" },
+        ]
+      },
+      strategy: "将内部验证成熟的AI工具进行产品化改造，建立统一的产品架构和用户体系，形成'AI工具矩阵'品牌。",
+      actions: [
+        { title: "产品标准化", desc: "统一产品架构、用户体系、付费模式" },
+        { title: "功能深化", desc: "SlideAI增加模板市场，智绘链图增加数据订阅" },
+        { title: "新品研发", desc: "AI市场分析、AI竞品对标等垂直工具" },
+      ],
+      metrics: [
+        { label: "产品矩阵", value: "6+", unit: "款" },
+        { label: "注册用户", value: "1000+", unit: "人" },
+        { label: "产品收入", value: "50+", unit: "万" },
+      ]
+    }
+  },
+  {
+    id: 2,
+    title: "市场产品服务体系构建",
+    subtitle: "面向市场的完整产品矩阵",
+    description: "构建包括DILI尽调引擎、招商系统、AI报告生成等在内的市场化产品服务体系，形成可持续的商业模式。",
+    badges: ["市场化", "商业模式"],
+    image: "/plan_2_gov.png",
+    priority: "战略支柱",
+    color: "text-gold-dark",
+    priorityBg: "bg-gold/10 text-gold-dark",
+    content: {
+      foundation: {
+        title: "核心产品",
+        items: [
+          { name: "DILI尽调引擎", desc: "智能企业尽职调查分析平台，加速投资决策" },
+          { name: "招商系统", desc: "AI驱动的精准招商引资工具，助力区域发展" },
+          { name: "AI报告生成", desc: "多场景研究报告自动化产出，降低创作成本" },
+        ]
+      },
+      vision: "实现传统业务转型升级 + 创新业务落地商业化，打造面向政企的完整产品服务体系。",
+      targets: [
+        { label: "产品体系", value: "3+", desc: "核心产品线" },
+        { label: "客户覆盖", value: "100+", desc: "政企客户" },
+        { label: "年度收入", value: "200+", unit: "万" },
+      ]
+    }
+  },
+  {
+    id: 3,
+    title: "运营模式联动创新",
+    subtitle: "挖掘资源生态能力",
+    description: "与工赋中心市场运营推广协同联合，嫁接联通资源做产品推介，通过生态合作快速触达政企大客户，实现市场规模化。",
+    badges: ["生态协同", "资源整合"],
+    image: "/plan_4_ecosystem.png",
+    priority: "增长引擎",
+    color: "text-accent",
+    priorityBg: "bg-accent/10 text-accent",
+    content: {
+      foundation: {
+        title: "合作模式",
+        items: [
+          { name: "工赋中心协同", desc: "市场运营推广联合，实现1+1>2效果" },
+          { name: "资源生态嫁接", desc: "联通资源对接，获得渠道优势与市场机会" },
+          { name: "产品推介联动", desc: "联合品牌推广，提升产品市场认知度" },
+        ]
+      },
+      approach: "不走传统销售模式，而是通过生态合作、资源整合、联合推介，快速打开政企市场，形成可复制的合作范式。",
+      targets: [
+        { label: "合作伙伴", value: "5+", desc: "生态合作关系" },
+        { label: "客户触达", value: "500+", desc: "政企大客户" },
+        { label: "联动收入", value: "150+", unit: "万" },
+      ]
+    }
+  }
+];
+
+// 保留原有的详细plans数据（用于原来的Dialog内容）
 const plans = [
   {
     icon: Package,
@@ -161,22 +280,18 @@ const PlanSection = () => {
               战略规划：<span className="text-gradient-gold">创新+</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed text-lg">
-              不仅仅是技术的叠加，更是业务模式的重构。
-              <br />
-              以AI为核心驱动力，赋能知识、咨询、交付三大业务场景，探索第二增长曲线。
+              围绕AI产品研发和运营出发，通过优化底层技术架构、拓展AI工具开发、构建市场产品服务体系，实现传统业务转型升级和创新业务落地商业化。
             </p>
           </div>
         </ScrollReveal>
 
-        {/* 计划卡片 grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {plans.map((plan, index) => (
+        {/* 战略卡片 grid - 前4个 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          {strategicPlans.map((plan, index) => (
             <ScrollReveal key={plan.title} delay={index * 100}>
               <Dialog>
                 <DialogTrigger asChild>
-                  <div
-                    className="group h-full p-6 rounded-[2.5rem] bg-gradient-to-br from-card to-card/50 border border-border hover:border-primary/50 hover:shadow-2xl transition-all duration-500 cursor-pointer relative overflow-hidden text-left w-full hover:-translate-y-2 flex flex-col"
-                  >
+                  <div className="group h-full p-6 rounded-[2.5rem] bg-gradient-to-br from-card to-card/50 border border-border hover:border-primary/50 hover:shadow-2xl transition-all duration-500 cursor-pointer relative overflow-hidden text-left w-full hover:-translate-y-2 flex flex-col">
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                     <div className="absolute top-8 right-8 z-20">
@@ -185,47 +300,29 @@ const PlanSection = () => {
                       </div>
                     </div>
 
-                    {/* Check if image exists, use fallback if not - simpler check in JSX since we added property to all */}
                     <div className="relative mb-6 overflow-hidden rounded-2xl h-56 w-full shadow-lg shrink-0 group-hover:shadow-xl transition-all duration-500 bg-secondary/30">
-                      {plan.image ? (
+                      {plan.image && (
                         <img
                           src={plan.image}
                           alt={plan.title}
                           onError={(e) => {
-                            // Fallback to stylized placeholder on error
                             e.currentTarget.style.display = 'none';
-                            e.currentTarget.nextElementSibling?.classList.remove('hidden');
                           }}
                           className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                         />
-                      ) : null}
-
-                      {/* Fallback container (hidden if image loads) */}
-                      <div className={`absolute inset-0 flex items-center justify-center ${plan.image ? 'hidden' : ''}`}>
-                        <plan.icon className="w-16 h-16 opacity-10 text-foreground" />
-                      </div>
-
+                      )}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40" />
-
-                      <div className={`absolute bottom-4 left-4 w-12 h-12 rounded-xl ${plan.priorityBg} backdrop-blur-md flex items-center justify-center border border-white/10 shadow-lg`}>
-                        <plan.icon className="w-6 h-6" />
+                      <div className={`absolute bottom-4 left-4 px-3 py-1 rounded-lg ${plan.priorityBg} backdrop-blur-md border border-white/10 shadow-lg text-xs font-bold`}>
+                        {plan.priority}
                       </div>
                     </div>
 
                     <div className="flex-grow flex flex-col">
-                      <div className="mb-3">
-                        <div className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-0 tracking-wide uppercase ${plan.priorityBg} bg-opacity-20`}>
-                          {plan.priority}
-                        </div>
-                      </div>
-
                       <h3 className="text-2xl font-bold mb-2">{plan.title}</h3>
                       <p className="text-sm font-medium text-muted-foreground mb-4">{plan.subtitle}</p>
-
                       <p className="text-muted-foreground/80 text-sm leading-relaxed mb-6 line-clamp-2">
                         {plan.description}
                       </p>
-
                       <div className="flex gap-2 mt-auto">
                         {plan.badges.map((badge, i) => (
                           <span key={i} className="px-3 py-1 bg-secondary rounded-lg text-xs font-medium text-secondary-foreground border border-border/50">
@@ -237,25 +334,24 @@ const PlanSection = () => {
                   </div>
                 </DialogTrigger>
 
+                {/* Dialog内容 */}
                 <DialogContent className="max-w-[75rem] w-full bg-card border border-border/50 shadow-2xl p-0 overflow-hidden rounded-3xl flex flex-col h-auto min-h-[600px] max-h-[90vh]">
-                  {/* Common Header */}
+                  {/* Header */}
                   <div className="relative shrink-0 p-8 pb-6 border-b border-border/40 flex justify-between items-end bg-gradient-to-r from-secondary/30 to-background/80">
                     <div className="flex items-center gap-6">
                       <div className={`w-16 h-16 rounded-2xl ${plan.priorityBg} flex items-center justify-center shrink-0 shadow-lg`}>
-                        <plan.icon className="w-8 h-8" />
+                        <Target className="w-8 h-8" />
                       </div>
                       <div>
                         <div className="flex items-center gap-3 mb-2">
                           <span className={`px-3 py-0.5 rounded-full text-[10px] font-bold tracking-widest uppercase ${plan.priorityBg} border border-current opacity-70`}>
                             {plan.priority}
                           </span>
-                          <span className="h-px flex-1 bg-border/50 w-20"></span>
                         </div>
                         <DialogTitle className="text-3xl font-bold tracking-tight mb-1">{plan.title}</DialogTitle>
                         <p className="text-base text-muted-foreground/80 font-medium">{plan.subtitle}</p>
                       </div>
                     </div>
-                    {/* Top Right Tags */}
                     <div className="flex gap-2">
                       {plan.badges.map((badge, i) => (
                         <span key={i} className="px-3 py-1 bg-background/50 backdrop-blur-sm rounded-lg text-xs font-semibold text-foreground/70 border border-border/50 shadow-sm">
@@ -265,282 +361,178 @@ const PlanSection = () => {
                     </div>
                   </div>
 
-                  {/* 模态框1: AI产品矩阵扩展 */}
-                  {index === 0 && (
-                    <div className="flex-1 grid grid-cols-12 overflow-hidden bg-background/50">
-                      {/* 左侧：2025已验证产品 */}
-                      <div className="col-span-12 lg:col-span-5 border-r border-border/40 p-8 flex flex-col gap-6 bg-secondary/5">
-                        <div>
-                          <h4 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">
-                            <CheckCircle className="w-4 h-4 text-green-500" /> {plan.content.foundation.title}
-                          </h4>
-                          <div className="space-y-3">
-                            {plan.content.foundation.items.map((item: any, i: number) => (
-                              <div key={i} className="p-4 rounded-xl bg-card border border-border/60 hover:border-primary/30 transition-all group">
-                                <div className="flex items-start justify-between mb-2">
-                                  <h5 className="font-bold text-sm">{item.name}</h5>
-                                  <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${item.status === '已上线' ? 'bg-green-500/10 text-green-600' : item.status === '内测中' ? 'bg-yellow-500/10 text-yellow-600' : 'bg-blue-500/10 text-blue-600'}`}>
+                  {/* Body */}
+                  <div className="flex-1 p-8 space-y-6 overflow-y-auto">
+                    {/* 基础内容 */}
+                    {plan.content.foundation && (
+                      <div>
+                        <h4 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">
+                          <CheckCircle className="w-4 h-4 text-green-500" /> {plan.content.foundation.title}
+                        </h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                          {plan.content.foundation.items.map((item: any, i: number) => (
+                            <div key={i} className="p-4 rounded-xl bg-secondary/30 border border-border/60 hover:border-primary/30 transition-all">
+                              <div className="flex items-start justify-between mb-2">
+                                <h5 className="font-bold text-sm">{item.name}</h5>
+                                {item.status && (
+                                  <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
+                                    item.status === '已上线' || item.status === '已完成' ? 'bg-green-500/10 text-green-600' :
+                                    item.status === '内测中' || item.status === '进行中' ? 'bg-yellow-500/10 text-yellow-600' :
+                                    'bg-blue-500/10 text-blue-600'
+                                  }`}>
                                     {item.status}
                                   </span>
-                                </div>
-                                <p className="text-xs text-muted-foreground mb-2">{item.desc}</p>
-                                {item.link && (
-                                  <a href={`https://${item.link}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-primary hover:underline">
-                                    {item.link} <ExternalLink className="w-3 h-3" />
-                                  </a>
                                 )}
                               </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* 右侧：2026规划 */}
-                      <div className="col-span-12 lg:col-span-7 p-8 flex flex-col gap-6 bg-gradient-to-br from-transparent to-primary/5">
-                        <div>
-                          <h4 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-primary mb-4">
-                            <Zap className="w-4 h-4" /> 2026 核心策略
-                          </h4>
-                          <p className="text-sm text-foreground/90 leading-relaxed p-4 rounded-xl bg-primary/5 border border-primary/10">
-                            {plan.content.strategy}
-                          </p>
-                        </div>
-
-                        <div>
-                          <h4 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">
-                            <TrendingUp className="w-4 h-4 text-gold" /> 关键行动
-                          </h4>
-                          <div className="grid grid-cols-3 gap-3">
-                            {plan.content.actions.map((action: any, i: number) => (
-                              <div key={i} className="p-4 rounded-xl bg-card border border-border/50 hover:shadow-md hover:border-gold/30 transition-all text-center">
-                                <div className="w-8 h-8 mx-auto mb-3 rounded-lg bg-gold/10 flex items-center justify-center text-gold font-bold text-sm">{i + 1}</div>
-                                <h5 className="font-bold text-sm mb-1">{action.title}</h5>
-                                <p className="text-xs text-muted-foreground">{action.desc}</p>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-
-                        {/* 目标指标 */}
-                        <div className="mt-auto p-6 rounded-2xl bg-gradient-to-r from-card to-secondary/30 border border-primary/10">
-                          <h4 className="text-xs font-bold text-muted-foreground uppercase mb-4">2026 目标</h4>
-                          <div className="grid grid-cols-3 gap-4">
-                            {plan.content.metrics.map((metric: any, i: number) => (
-                              <div key={i} className="text-center">
-                                <div className="text-3xl font-black text-primary">{metric.value}</div>
-                                <div className="text-xs text-muted-foreground">{metric.label}</div>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* 模态框2: 政务AI解决方案 */}
-                  {index === 1 && (
-                    <div className="flex-1 grid grid-cols-12 bg-background/50 overflow-hidden">
-                      {/* 左侧：优势与策略 */}
-                      <div className="col-span-12 lg:col-span-4 border-r border-border/40 p-8 flex flex-col gap-6 bg-secondary/5">
-                        <div>
-                          <h4 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">
-                            <Landmark className="w-4 h-4 text-gold" /> {plan.content.foundation.title}
-                          </h4>
-                          <div className="space-y-3">
-                            {plan.content.foundation.items.map((item: any, i: number) => (
-                              <div key={i} className="p-3 rounded-xl bg-card border border-border/50">
-                                <h5 className="font-bold text-sm text-gold-dark mb-1">{item.name}</h5>
-                                <p className="text-xs text-muted-foreground">{item.desc}</p>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                        <div className="flex-1 p-5 rounded-2xl bg-gold/5 border border-gold/20">
-                          <h4 className="text-xs font-bold text-gold-dark uppercase tracking-wider mb-3">策略聚焦</h4>
-                          <p className="text-sm text-foreground/80 leading-relaxed">{plan.content.approach}</p>
-                        </div>
-                      </div>
-
-                      {/* 右侧：场景与目标 */}
-                      <div className="col-span-12 lg:col-span-8 p-8 flex flex-col gap-6">
-                        <div>
-                          <h4 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">
-                            <Target className="w-4 h-4 text-primary" /> 核心应用场景
-                          </h4>
-                          <div className="grid grid-cols-2 gap-4">
-                            {plan.content.scenarios.map((scenario: any, i: number) => (
-                              <div key={i} className="p-5 rounded-xl bg-card border border-border/50 hover:border-primary/30 hover:shadow-md transition-all group">
-                                <div className="flex items-center gap-3 mb-3">
-                                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                                    <scenario.icon className="w-5 h-5 text-primary" />
-                                  </div>
-                                  <h5 className="font-bold">{scenario.name}</h5>
-                                </div>
-                                <p className="text-sm text-muted-foreground">{scenario.desc}</p>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-
-                        {/* 目标指标 */}
-                        <div className="mt-auto p-6 rounded-2xl bg-gradient-to-r from-gold/5 to-gold/10 border border-gold/20">
-                          <h4 className="text-xs font-bold text-gold-dark uppercase mb-4">2026 目标</h4>
-                          <div className="grid grid-cols-3 gap-4">
-                            {plan.content.targets.map((target: any, i: number) => (
-                              <div key={i} className="text-center">
-                                <div className="text-3xl font-black text-gold-dark">{target.value}</div>
-                                <div className="text-xs text-muted-foreground">{target.label}</div>
-                                {target.desc && <div className="text-[10px] text-muted-foreground/70 mt-1">{target.desc}</div>}
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* 模态框3: 企业AI转型咨询 */}
-                  {index === 2 && (
-                    <div className="flex-1 grid grid-cols-12 bg-background/50 overflow-hidden relative">
-                      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px]" />
-
-                      {/* 左侧：对标与差异化 */}
-                      <div className="col-span-12 lg:col-span-4 border-r border-border/40 p-8 flex flex-col gap-6 relative z-10 bg-secondary/5">
-                        <div>
-                          <h4 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">
-                            <Globe className="w-4 h-4 text-accent" /> {plan.content.benchmark.title}
-                          </h4>
-                          <div className="space-y-3">
-                            {plan.content.benchmark.items.map((item: any, i: number) => (
-                              <div key={i} className="p-3 rounded-xl bg-card border border-border/50">
-                                <div className="flex items-center gap-2 mb-1">
-                                  <span className="font-bold text-sm text-accent">{item.firm}</span>
-                                  <span className="text-[10px] text-muted-foreground">· {item.focus}</span>
-                                </div>
-                                <p className="text-xs text-muted-foreground">{item.insight}</p>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                        <div className="flex-1 p-5 rounded-2xl bg-accent/5 border border-accent/20">
-                          <h4 className="text-xs font-bold text-accent uppercase tracking-wider mb-3">我们的差异化</h4>
-                          <p className="text-sm text-foreground/80 leading-relaxed">{plan.content.ourEdge}</p>
-                        </div>
-                      </div>
-
-                      {/* 右侧：服务模式 */}
-                      <div className="col-span-12 lg:col-span-8 p-8 flex flex-col gap-6 relative z-10">
-                        <div className="flex-1">
-                          <h4 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-muted-foreground mb-6">
-                            <Play className="w-4 h-4 text-accent" /> 服务交付模式
-                          </h4>
-                          <div className="relative">
-                            <div className="absolute left-[60px] top-8 bottom-8 w-0.5 bg-gradient-to-b from-accent/50 via-accent/30 to-accent/50" />
-                            <div className="space-y-4">
-                              {plan.content.serviceModel.map((step: any, i: number) => (
-                                <div key={i} className="flex gap-6 relative group">
-                                  <div className="w-[120px] shrink-0 flex items-center gap-3">
-                                    <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/30 flex items-center justify-center text-sm font-bold text-accent group-hover:bg-accent group-hover:text-white transition-all">
-                                      {step.phase}
-                                    </div>
-                                    <div className="w-3 h-3 rounded-full bg-background border-2 border-accent relative z-10" />
-                                  </div>
-                                  <div className="flex-1 p-4 rounded-xl bg-card border border-border/50 group-hover:border-accent/30 group-hover:shadow-md transition-all">
-                                    <div className="flex items-center justify-between mb-1">
-                                      <h5 className="font-bold text-sm">{step.title}</h5>
-                                      <span className="text-[10px] text-muted-foreground bg-secondary px-2 py-0.5 rounded">{step.duration}</span>
-                                    </div>
-                                    <p className="text-xs text-muted-foreground">{step.desc}</p>
-                                  </div>
-                                </div>
-                              ))}
+                              <p className="text-xs text-muted-foreground">{item.desc}</p>
                             </div>
-                          </div>
-                        </div>
-
-                        {/* 目标指标 */}
-                        <div className="p-6 rounded-2xl bg-gradient-to-r from-accent/5 to-accent/10 border border-accent/20">
-                          <h4 className="text-xs font-bold text-accent uppercase mb-4">2026 目标</h4>
-                          <div className="grid grid-cols-3 gap-4">
-                            {plan.content.targets.map((target: any, i: number) => (
-                              <div key={i} className="text-center">
-                                <div className="text-3xl font-black text-accent">{target.value}</div>
-                                <div className="text-xs text-muted-foreground">{target.label}</div>
-                                {target.desc && <div className="text-[10px] text-muted-foreground/70 mt-1">{target.desc}</div>}
-                              </div>
-                            ))}
-                          </div>
+                          ))}
                         </div>
                       </div>
-                    </div>
-                  )}
+                    )}
 
-                  {/* 模态框4: 生态合作与能力开放 */}
-                  {index === 3 && (
-                    <div className="flex-1 grid grid-cols-12 bg-background/50 overflow-hidden relative">
-                      <div className="absolute -right-32 -top-32 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+                    {/* 成果/战略/愿景 */}
+                    {(plan.content.achievements || plan.content.strategy || plan.content.vision || plan.content.approach) && (
+                      <div className="p-5 rounded-xl bg-primary/5 border border-primary/20">
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {plan.content.achievements || plan.content.strategy || plan.content.vision || plan.content.approach}
+                        </p>
+                      </div>
+                    )}
 
-                      {/* 左侧：合作方向 */}
-                      <div className="col-span-12 lg:col-span-5 p-8 flex flex-col gap-6 border-r border-border/40 bg-secondary/5 relative z-10">
-                        <div>
-                          <h4 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">
-                            <Users2 className="w-4 h-4 text-primary" /> {plan.content.partners.title}
-                          </h4>
-                          <div className="space-y-3">
-                            {plan.content.partners.categories.map((cat: any, i: number) => (
-                              <div key={i} className="p-4 rounded-xl bg-card border border-border/50 hover:border-primary/30 transition-all">
-                                <div className="flex items-center justify-between mb-2">
-                                  <h5 className="font-bold text-sm text-primary">{cat.type}</h5>
-                                  <span className="text-[10px] text-muted-foreground">{cat.examples}</span>
-                                </div>
-                                <p className="text-xs text-muted-foreground">{cat.mode}</p>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                        <div className="p-4 rounded-xl bg-primary/5 border border-primary/10">
-                          <p className="text-sm text-foreground/80 leading-relaxed italic">"{plan.content.vision}"</p>
+                    {/* 行动计划 */}
+                    {plan.content.actions && (
+                      <div>
+                        <h4 className="text-sm font-bold mb-3">行动计划</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                          {plan.content.actions.map((action: any, i: number) => (
+                            <div key={i} className="p-4 rounded-xl bg-gradient-card border border-border/30">
+                              <h5 className="font-bold text-sm mb-2">{action.title}</h5>
+                              <p className="text-xs text-muted-foreground">{action.desc}</p>
+                            </div>
+                          ))}
                         </div>
                       </div>
+                    )}
 
-                      {/* 右侧：商业模式与目标 */}
-                      <div className="col-span-12 lg:col-span-7 p-8 flex flex-col gap-6 relative z-10">
-                        <div>
-                          <h4 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">
-                            <Layers className="w-4 h-4 text-gold" /> 合作模式
-                          </h4>
-                          <div className="grid grid-cols-3 gap-4">
-                            {plan.content.models.map((model: any, i: number) => (
-                              <div key={i} className="p-4 rounded-xl bg-card border border-border/50 hover:shadow-md hover:border-gold/30 transition-all">
-                                <h5 className="font-bold text-sm mb-2">{model.name}</h5>
-                                <p className="text-xs text-muted-foreground mb-3">{model.desc}</p>
-                                <div className="text-[10px] text-gold-dark bg-gold/10 px-2 py-1 rounded inline-block">{model.revenue}</div>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-
-                        {/* 目标指标 */}
-                        <div className="mt-auto p-6 rounded-2xl bg-gradient-to-r from-primary/5 via-gold/5 to-transparent border border-border/60">
-                          <h4 className="text-xs font-bold text-muted-foreground uppercase mb-4">2026 目标</h4>
-                          <div className="grid grid-cols-3 gap-4">
-                            {plan.content.targets.map((target: any, i: number) => (
-                              <div key={i} className="text-center">
-                                <div className="text-3xl font-black text-primary">{target.value}</div>
-                                <div className="text-xs text-muted-foreground">{target.label}</div>
-                                {target.desc && <div className="text-[10px] text-muted-foreground/70 mt-1">{target.desc}</div>}
-                              </div>
-                            ))}
-                          </div>
+                    {/* 目标指标 */}
+                    {(plan.content.metrics || plan.content.targets) && (
+                      <div>
+                        <h4 className="text-sm font-bold mb-3">目标指标</h4>
+                        <div className="grid grid-cols-3 gap-4">
+                          {(plan.content.metrics || plan.content.targets).map((metric: any, i: number) => (
+                            <div key={i} className="p-4 rounded-xl bg-secondary/50 border border-border/30 text-center">
+                              <div className="text-2xl font-black text-primary">{metric.value}{metric.unit || ''}</div>
+                              <div className="text-sm font-medium">{metric.label}</div>
+                              {metric.desc && (
+                                <div className="text-xs text-muted-foreground mt-1">{metric.desc}</div>
+                              )}
+                            </div>
+                          ))}
                         </div>
                       </div>
-                    </div>
-                  )}
-
+                    )}
+                  </div>
                 </DialogContent>
               </Dialog>
             </ScrollReveal>
           ))}
+        </div>
+
+        {/* 战略路径对比 - 第三排 */}
+        <div className="mb-12">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl font-bold">战略路径选择</h3>
+            <p className="text-muted-foreground text-sm mt-2">两种发展模式的对比</p>
+          </div>
+
+          <div className="relative max-w-5xl mx-auto">
+            {/* VS标记 */}
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+              <div className="w-12 h-12 rounded-full bg-card border-4 border-gold flex items-center justify-center shadow-lg">
+                <span className="text-gold font-bold text-lg">VS</span>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* 成本中心模式（灰色/弱化） */}
+              <ScrollReveal delay={0}>
+                <div className="h-full rounded-2xl bg-gradient-to-br from-gray-900/30 to-gray-900/10 border border-gray-500/30 p-8 hover:shadow-lg transition-all duration-500 opacity-70">
+                  <div className="text-center mb-6">
+                    <h4 className="text-xl font-bold text-gray-500 mb-2">成本中心模式</h4>
+                    <p className="text-xs text-gray-400">传统研发部门定位</p>
+                  </div>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <span className="text-gray-500 text-lg leading-none">◦</span>
+                      <span className="text-sm text-gray-500">专注于产品和技术研发</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-gray-500 text-lg leading-none">◦</span>
+                      <span className="text-sm text-gray-500">依赖外部业务部门推广销售</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-gray-500 text-lg leading-none">◦</span>
+                      <span className="text-sm text-gray-500">成本消耗型组织定位</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-gray-500 text-lg leading-none">◦</span>
+                      <span className="text-sm text-gray-500">被动响应支撑角色</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-gray-500 text-lg leading-none">◦</span>
+                      <span className="text-sm text-gray-500">缺乏市场直接反馈机制</span>
+                    </li>
+                  </ul>
+                  <div className="mt-6 pt-6 border-t border-gray-500/20">
+                    <p className="text-xs text-gray-400 text-center font-medium">不倾向的发展路径</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              {/* 产研运一体模式（金色/强调） */}
+              <ScrollReveal delay={100}>
+                <div className="h-full rounded-2xl bg-gradient-to-br from-gold/20 to-gold/5 border-2 border-gold/50 p-8 hover:shadow-2xl transition-all duration-500 relative group">
+                  <div className="absolute -top-4 right-8 bg-gold text-black px-4 py-1 rounded-full text-xs font-bold">
+                    ⭐ 推荐转型方向
+                  </div>
+                  <div className="text-center mb-6 mt-2">
+                    <h4 className="text-xl font-bold text-gold mb-2">产研运一体模式</h4>
+                    <p className="text-xs text-gold/70">业务闭环转型方向</p>
+                  </div>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-foreground">产品设计开发全链路掌控</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-foreground">技术架构搭建自主可控</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-foreground">市场运营推广主动出击</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-foreground">客户反馈直达研发团队</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-foreground">自产自销实现业务闭环</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-foreground">自主造血能力持续增强</span>
+                    </li>
+                  </ul>
+                  <div className="mt-6 pt-6 border-t border-gold/30">
+                    <p className="text-xs text-gold font-bold text-center">完整的业务闭环 | 自产自销能力</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
         </div>
 
         {/* 底部Slogan */}
