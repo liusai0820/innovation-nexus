@@ -51,6 +51,93 @@ interface ProjectDetail {
 // 项目案例数据
 const projects: ProjectDetail[] = [
   {
+    id: 5,
+    title: "福田招商系统交付",
+    category: "平台运营",
+    subtitle: "招商系统SaaS系统交付",
+    description:
+      "面向全区招商责任部门，建设可动态更新、逻辑清晰、要素关联的招商图谱能力，打通“空间资源—产业链—企业线索—触达转化”的工作闭环，用于指导全区“8+3”重点产业招商。",
+    highlights: ["动态更新图谱", "空间×产业联动", "SaaS账号交付", "平台首单落地"],
+    image: "/investment_platform.png",
+    color: "border-accent",
+    problem:
+      "需要一套可动态更新、逻辑清晰、要素关联的招商图谱体系，既能呈现空间与产业的匹配关系，又能沉淀线索、方法与下一步建议，用于统筹指导全区招商责任部门开展招商工作。",
+    solution:
+      "提供20个招商系统SaaS账号，服务全区“8+3”重点产业招商；围绕福田实际工作流，定义并优化产业链招商、榜单招商、一键触达、安商稳商等能力，并通过宣讲培训推动方法论落地。",
+    features: [
+      { icon: "Network", title: "产业链招商", desc: "以链为纲梳理上中下游企业与关键环节，形成可追踪的招商清单与线索池" },
+      { icon: "BarChart3", title: "榜单招商", desc: "按细分赛道/指标生成企业榜单，辅助锁定龙头与高成长目标" },
+      { icon: "Layers", title: "供应链招商", desc: "围绕核心企业上下游补链强链，提升产业集聚与协同效应" },
+      { icon: "Building2", title: "区域招商", desc: "结合空间载体与片区定位，呈现“空间—产业—企业”匹配关系，指导落地" },
+      { icon: "TrendingUp", title: "资本招商", desc: "联动投融资与产业基金视角，辅助筛选优质标的与合作机构" },
+      { icon: "Zap", title: "一键触达", desc: "标准化触达话术与渠道联动，提升线索跟进效率与触达成功率" },
+      { icon: "CheckCircle2", title: "安商稳商", desc: "沉淀服务事项与企业诉求，形成“引进—服务—稳定—扩张”的全周期支撑" },
+      { icon: "Target", title: "企业评估", desc: "多维指标评估企业质量与匹配度，为招商优先级与资源配置提供依据" },
+    ],
+    metrics: [
+      { value: "20个", label: "SaaS账号", change: "覆盖全区“8+3”重点产业招商" },
+      { value: "1700+", label: "企业成效分析", change: "输出下一步工作建议" },
+      { value: "95万", label: "中心首单合同", change: "情报平台系统首个销售订单" },
+      { value: "3场", label: "招商宣讲培训", change: "面向青年领导干部讲解方法论" },
+    ],
+    timeline: [
+      { phase: "书记汇报（高调亮相）", time: "2023 Q4", status: "done" },
+      { phase: "需求对接（功能定义）", time: "2024 Q3", status: "done" },
+      { phase: "需求更新（系统试用）", time: "2025 Q3", status: "done" },
+      { phase: "平台首单（商务落地）", time: "2025 Q4", status: "done" },
+    ],
+    internalValue: [
+      "沉淀“图谱+线索+触达+服务”的招商方法论与标准化流程",
+      "形成可复用的招商系统交付范式（账号体系、培训体系、功能迭代机制）",
+      "以首单验证情报平台系统的商业化路径与定价能力",
+    ],
+    externalValue: [
+      "为全区招商责任部门提供统一的动态招商图谱与工作抓手",
+      "用空间×产业关系指导平台招商落地与资源精准配置",
+      "支持产业链招商、榜单招商等多路径协同，提升招商效率与质量",
+    ],
+  },
+  {
+    id: 6,
+    title: "产业特色情报数据服务",
+    category: "产业特色数据",
+    subtitle: "集成电路产业信息服务",
+    description:
+      "围绕集成电路产业，提供国际前沿工艺技术路线、供应链成本、行业竞争格局与技术趋势的系统分析服务，通过情报平台子平台账号，为头部企业与机构供给高质量数据与深度报告。",
+    highlights: ["集成电路专属数据", "工艺路线深度分析", "供应链成本评估", "头部客户验证"],
+    image: "/ai_think_tank.png",
+    color: "border-primary",
+    problem:
+      "集成电路产业技术迭代快、链条长，企业在前沿工艺路线判断、供应链成本评估、行业竞争格局与技术趋势分析上，缺乏系统化、高时效、可验证的数据与情报支撑。",
+    solution:
+      "基于情报平台，搭建“集成电路产业信息服务子平台”，为客户开通账号服务，提供覆盖工艺研发、行业分析、终端拆解、产线跟踪等维度的结构化数据与分析报告，支持企业战略决策与研发布局。",
+    features: [
+      { icon: "Cpu", title: "工艺研发情报", desc: "跟踪国际前沿工艺技术路线与关键节点厂商，为研发决策提供参考" },
+      { icon: "BarChart3", title: "行业与竞争分析", desc: "从市场规模、竞争格局、技术路径等多维度输出行业分析报告" },
+      { icon: "FileText", title: "终端拆解数据", desc: "通过终端产品拆解，解析关键芯片与材料选型，反推供应链构成" },
+      { icon: "Network", title: "产线与供应链跟踪", desc: "持续跟踪重点产线与供应链变化，评估成本结构与风险点" },
+    ],
+    metrics: [
+      { value: "550万", label: "当年销售订单", change: "市场反响良好，客户口碑佳" },
+      { value: "多家", label: "产业龙头客户", change: "服务新凯来、荣耀、微电子所、鹏芯微、鹏新旭等" },
+      { value: "长期", label: "数据沉淀", change: "前沿技术趋势与分析报告本地落库" },
+    ],
+    timeline: [
+      { phase: "企业走访（意向收集）", time: "2024 Q2", status: "done" },
+      { phase: "需求确认（合同签署）", time: "2024 Q4", status: "done" },
+      { phase: "市场拓展（寻找增量）", time: "2025 Q2", status: "done" },
+      { phase: "合约到期（服务终止）", time: "2025 Q4", status: "done" },
+    ],
+    internalValue: [
+      "在集成电路垂直领域沉淀系统化情报与数据资产，为后续模型与工具研发提供高质量语料",
+      "形成“工艺—供应链—终端—产线”一体化分析框架，可复制到其他产业赛道",
+    ],
+    externalValue: [
+      "为集成电路龙头企业与研究机构提供高价值情报服务，辅助技术与市场决策",
+      "将情报平台能力产品化为行业子平台，可面向更多区域与客户推广",
+    ],
+  },
+  {
     id: 3,
     title: "工业互联网平台运营",
     category: "平台运营",
@@ -252,42 +339,58 @@ const projects: ProjectDetail[] = [
   },
   {
     id: 4,
-    title: "金融业务大模型产品",
+    title: "金融diki研发",
     category: "AI创新应用",
-    subtitle: "面向金融场景的智能分析产品",
-    description: "基于大语言模型技术，开发面向金融业务场景的智能分析产品，实现投资决策辅助、风险评估等核心功能。",
-    highlights: ["产品1.0版本上线", "多家机构联创合作", "核心功能模块完成开发"],
+    subtitle: "面向硬科技投资的智能投研助手",
+    description:
+      "在“构造、投小、投硬科技”与国家千亿级创业基金入场的大背景下，围绕中小硬科技企业信息匮乏、尽调困难的问题，打造新一代投资研究工具——金融diki。",
+    highlights: ["投资界的 Cursor", "信息搜集到报告的一站式闭环", "专注硬科技投研场景"],
     image: "/shenzhen_presentation.png",
     color: "border-primary",
-    problem: "金融业务分析依赖专业人才，分析效率低、成本高，难以规模化服务中小客户。",
-    solution: "将金融分析专家经验与大模型结合，提供智能化分析工具，降低分析门槛。",
+    problem:
+      "在国家倡导“构造、投小、投硬科技”和千亿级创业基金入场的趋势下，大量中小硬科技企业进入视野，但信息高度分散且不透明，传统尽调严重依赖人工，成本高、周期长、质量难以保证，系统性投研能力不足的问题将逐步暴露。",
+    solution:
+      "打造“投资界的 Cursor”：以全域感知项目前世今生为基础，以投资导师（Mentor）引导深入投研为核心，将“信息搜集→关键假设→假设验证→报告输出”全过程收敛为一个可追踪、可复盘的工作流。",
     features: [
-      { icon: "BarChart3", title: "智能分析引擎", desc: "基于LLM的投资决策辅助分析" },
-      { icon: "Target", title: "风险评估模型", desc: "多维度风险识别与预警" },
-      { icon: "Layers", title: "多场景适配", desc: "支持多种金融业务场景" },
-      { icon: "Users", title: "联创合作模式", desc: "与金融机构联合开发定制功能" },
+      {
+        icon: "Search",
+        title: "感知引擎",
+        desc: "基于尽调框架对项目进行全维度信息感知与整理，构建“项目前世今生”知识底座",
+      },
+      {
+        icon: "Target",
+        title: "推理引擎",
+        desc: "由负面假设出发，驱动高强度逻辑攻防与反向论证，帮助暴露关键风险点与不合理假设",
+      },
+      {
+        icon: "Zap",
+        title: "行动引擎",
+        desc: "将线上思辨过程结构化为线下行动指南，形成可执行的访谈提纲、调研路径与行动清单",
+      },
+      {
+        icon: "Layers",
+        title: "数据底座",
+        desc: "沉淀企业画像、竞对分析、技术分析等结构化数据，为多项目、多周期投研提供可复用资产",
+      },
     ],
     metrics: [
-      { value: "1.0", label: "产品版本", change: "已上线" },
-      { value: "多家", label: "合作机构", change: "联创模式" },
-      { value: "3+", label: "核心功能", change: "完成开发" },
+      { value: "3", label: "智能引擎", change: "感知 / 推理 / 行动" },
+      { value: "3", label: "数据维度", change: "企业画像 / 竞对 / 技术分析" },
+      { value: "闭环", label: "投研流程", change: "信息→假设→验证→报告" },
     ],
     timeline: [
-      { phase: "需求调研", time: "2025 Q1", status: "done" },
-      { phase: "原型开发", time: "2025 Q2", status: "done" },
-      { phase: "1.0版本", time: "2025 Q3", status: "done" },
-      { phase: "客户试用", time: "2025 Q4", status: "done" },
-      { phase: "迭代优化", time: "2026", status: "in-progress" },
+      { phase: "概念提出（内部研讨）", time: "2025 Q3", status: "done" },
+      { phase: "用户调研（产品定义）", time: "2025 Q4", status: "done" },
+      { phase: "1.0版本问世", time: "2025 Q4", status: "done" },
+      { phase: "产品优化（用户汇报）", time: "2026 Q1", status: "in-progress" },
     ],
     internalValue: [
-      "探索AI+金融融合应用模式",
-      "积累金融领域AI落地经验",
-      "建立与金融机构合作关系",
+      "沉淀面向硬科技投资的标准化投研流程与方法论，将经验型投研升级为流程型投研",
+      "搭建适用于多项目、多轮次的投研知识图谱与数据底座，提升团队整体研究能力与效率",
     ],
     externalValue: [
-      "为金融机构提供智能分析工具",
-      "可作为SaaS产品对外服务",
-      "可输出技术解决方案",
+      "为投资机构提供“信息搜集→报告输出”的一体化智能投研工具，降低硬科技投研门槛",
+      "未来可与情报平台、产业图谱等能力打通，形成面向投资端的完整产品线",
     ],
   },
 ];
@@ -488,7 +591,13 @@ const ProjectCaseSection = () => {
                     <TrendingUp className="w-5 h-5 text-primary" />
                     核心指标
                   </h3>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div
+                    className={`grid gap-4 ${
+                      selectedProject.metrics && selectedProject.metrics.length === 3
+                        ? "grid-cols-1 md:grid-cols-3"
+                        : "grid-cols-2 md:grid-cols-4"
+                    }`}
+                  >
                     {selectedProject.metrics.map((metric, i) => (
                       <div key={i} className="p-4 rounded-xl bg-secondary/50 border border-border/30 text-center">
                         <div className="text-2xl font-black text-primary">{metric.value}</div>
