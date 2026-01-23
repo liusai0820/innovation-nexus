@@ -1,6 +1,5 @@
 import { useState } from "react";
 import {
-  ExternalLink,
   ImageIcon,
   X,
   Zap,
@@ -20,7 +19,10 @@ import {
   ArrowUpRight,
   ChevronRight,
   BarChart3,
-  Globe
+  Globe,
+  BookOpen,
+  Settings,
+  Rocket
 } from "lucide-react";
 import ScrollReveal from "../ScrollReveal";
 
@@ -35,7 +37,6 @@ interface ProjectDetail {
   image: string;
   color: string;
   link?: string;
-  // 扩展信息
   problem?: string;
   solution?: string;
   techStack?: string[];
@@ -48,47 +49,62 @@ interface ProjectDetail {
   externalValue?: string[];
 }
 
+// 业务板块定义
+interface BusinessLine {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  icon: any;
+  accentColor: string;
+  borderColor: string;
+  bgColor: string;
+  textColor: string;
+  projectIds: number[];
+}
+
+// 三大业务板块配置
+const businessLines: BusinessLine[] = [
+  {
+    id: "consulting",
+    title: "智库咨询转型",
+    subtitle: "AI全过程赋能，小团队大产出",
+    description: "利用AI技术重塑传统咨询业务流程，从资料收集、数据分析到报告撰写全程AI赋能，实现效率倍增与质量提升。",
+    icon: BookOpen,
+    accentColor: "bg-gold",
+    borderColor: "border-gold/30",
+    bgColor: "bg-gold/5",
+    textColor: "text-gold-dark",
+    projectIds: [0, 2], // 河套创新体系咨询、智绘链图
+  },
+  {
+    id: "platform",
+    title: "平台运营落地",
+    subtitle: "深耕产业情报，赋能招商服务",
+    description: "承接产业情报平台运营服务，将平台数据能力转化为实际业务价值，助力政府与园区精准招商引资。",
+    icon: Settings,
+    accentColor: "bg-accent",
+    borderColor: "border-accent/30",
+    bgColor: "bg-accent/5",
+    textColor: "text-accent",
+    projectIds: [3, 5], // 工业互联网平台运营、智慧招商系统
+  },
+  {
+    id: "innovation",
+    title: "创新应用开发",
+    subtitle: "打造AI原生产品，探索商业化路径",
+    description: "自主研发面向垂直场景的AI应用产品，从内部工具到外部SaaS，探索技术价值变现的多元路径。",
+    icon: Rocket,
+    accentColor: "bg-primary",
+    borderColor: "border-primary/30",
+    bgColor: "bg-primary/5",
+    textColor: "text-primary",
+    projectIds: [4, 1], // 金融业务大模型产品、SlideCraft AI
+  },
+];
+
 // 项目案例数据
 const projects: ProjectDetail[] = [
-  {
-    id: 3,
-    title: "工业互联网平台运营",
-    category: "平台运营",
-    subtitle: "工业互联网平台规范化运营",
-    description: "承接工业互联网平台运营服务，完成探索期向规范化运营期过渡，建立完整KPI指标体系，助力平台可持续发展。",
-    highlights: ["签订年度运营协议", "建立KPI指标体系", "业务协同落地"],
-    image: "/shenzhen_factory.png",
-    color: "border-accent",
-    problem: "工业互联网平台处于探索期，缺乏规范化运营机制，难以量化运营效果和持续优化。",
-    solution: "建立科学的KPI指标体系，从用户活跃度、业务转化率等维度量化运营效果。",
-    features: [
-      { icon: "Target", title: "KPI指标体系", desc: "建立多维度运营效果量化指标" },
-      { icon: "TrendingUp", title: "运营数据分析", desc: "平台使用数据分析与优化建议" },
-      { icon: "Users", title: "用户运营服务", desc: "企业用户对接与服务支持" },
-      { icon: "Layers", title: "业务协同", desc: "平台生态各方协同落地" },
-    ],
-    metrics: [
-      { value: "年度", label: "运营协议", change: "长期合作" },
-      { value: "3+", label: "KPI维度", change: "科学量化" },
-      { value: "持续", label: "优化迭代", change: "敏捷响应" },
-    ],
-    timeline: [
-      { phase: "运营接洽", time: "2025 Q1", status: "done" },
-      { phase: "协议签订", time: "2025 Q2", status: "done" },
-      { phase: "规范化运营", time: "2025 Q3", status: "done" },
-      { phase: "持续优化", time: "2025 Q4", status: "done" },
-      { phase: "年度续约", time: "2026", status: "in-progress" },
-    ],
-    internalValue: [
-      "拓展平台运营服务能力边界",
-      "积累工业互联网领域实战经验",
-      "建立可复用的运营方法论",
-    ],
-    externalValue: [
-      "为客户提供专业化平台运营服务",
-      "可作为标杆案例推广至其他平台",
-    ],
-  },
   {
     id: 0,
     title: "河套创新体系咨询",
@@ -251,6 +267,45 @@ const projects: ProjectDetail[] = [
     ],
   },
   {
+    id: 3,
+    title: "工业互联网平台运营",
+    category: "平台运营",
+    subtitle: "工业互联网平台规范化运营",
+    description: "承接工业互联网平台运营服务，完成探索期向规范化运营期过渡，建立完整KPI指标体系，助力平台可持续发展。",
+    highlights: ["签订年度运营协议", "建立KPI指标体系", "业务协同落地"],
+    image: "/shenzhen_factory.png",
+    color: "border-accent",
+    problem: "工业互联网平台处于探索期，缺乏规范化运营机制，难以量化运营效果和持续优化。",
+    solution: "建立科学的KPI指标体系，从用户活跃度、业务转化率等维度量化运营效果。",
+    features: [
+      { icon: "Target", title: "KPI指标体系", desc: "建立多维度运营效果量化指标" },
+      { icon: "TrendingUp", title: "运营数据分析", desc: "平台使用数据分析与优化建议" },
+      { icon: "Users", title: "用户运营服务", desc: "企业用户对接与服务支持" },
+      { icon: "Layers", title: "业务协同", desc: "平台生态各方协同落地" },
+    ],
+    metrics: [
+      { value: "年度", label: "运营协议", change: "长期合作" },
+      { value: "3+", label: "KPI维度", change: "科学量化" },
+      { value: "持续", label: "优化迭代", change: "敏捷响应" },
+    ],
+    timeline: [
+      { phase: "运营接洽", time: "2025 Q1", status: "done" },
+      { phase: "协议签订", time: "2025 Q2", status: "done" },
+      { phase: "规范化运营", time: "2025 Q3", status: "done" },
+      { phase: "持续优化", time: "2025 Q4", status: "done" },
+      { phase: "年度续约", time: "2026", status: "in-progress" },
+    ],
+    internalValue: [
+      "拓展平台运营服务能力边界",
+      "积累工业互联网领域实战经验",
+      "建立可复用的运营方法论",
+    ],
+    externalValue: [
+      "为客户提供专业化平台运营服务",
+      "可作为标杆案例推广至其他平台",
+    ],
+  },
+  {
     id: 4,
     title: "金融业务大模型产品",
     category: "AI创新应用",
@@ -349,7 +404,7 @@ const projects: ProjectDetail[] = [
 const iconMap: Record<string, any> = {
   FileText, Layers, Presentation, BarChart3, Sparkles, Globe,
   Network, Search, Target, Building2, Users, TrendingUp,
-  Zap, Clock, CheckCircle2, Cpu
+  Zap, Clock, CheckCircle2, Cpu, BookOpen, Settings, Rocket
 };
 
 const ProjectCaseSection = () => {
@@ -366,24 +421,8 @@ const ProjectCaseSection = () => {
     setSelectedProject(null);
   };
 
-  // 渲染状态标签
-  const renderStatus = (status: 'done' | 'in-progress' | 'planned') => {
-    const styles = {
-      'done': 'bg-green-500/10 text-green-600 border-green-500/20',
-      'in-progress': 'bg-gold/10 text-gold-dark border-gold/20',
-      'planned': 'bg-secondary text-muted-foreground border-border/30',
-    };
-    const labels = {
-      'done': '已完成',
-      'in-progress': '进行中',
-      'planned': '计划中',
-    };
-    return (
-      <span className={`px-2 py-0.5 rounded-full text-[10px] font-medium border ${styles[status]}`}>
-        {labels[status]}
-      </span>
-    );
-  };
+  // 根据ID获取项目
+  const getProjectById = (id: number) => projects.find(p => p.id === id);
 
   return (
     <section className="py-24 px-6 bg-background relative overflow-hidden">
@@ -397,74 +436,127 @@ const ProjectCaseSection = () => {
             <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">
               重点<span className="text-gradient-primary">项目案例</span>
             </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto text-lg">
-              2025年度完成的核心项目成果展示，点击卡片查看详情
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+              三大核心业务板块 × 六个重点项目，点击卡片查看详情
             </p>
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <ScrollReveal key={project.id} delay={index * 100}>
-              <div
-                onClick={() => openModal(project)}
-                className={`group h-full rounded-[2rem] bg-gradient-card border-2 ${project.color} hover:shadow-2xl hover:bg-card/80 transition-all duration-500 overflow-hidden flex flex-col cursor-pointer`}
-              >
-                {/* 图片区域 */}
-                <div className="relative h-56 overflow-hidden">
-                  {project.image ? (
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-secondary/30 flex items-center justify-center">
-                      <ImageIcon className="w-12 h-12 text-primary/30" />
+        {/* 按业务板块展示项目 */}
+        <div className="space-y-16">
+          {businessLines.map((business, bizIndex) => {
+            const BusinessIcon = business.icon;
+            return (
+              <ScrollReveal key={business.id} delay={bizIndex * 150}>
+                <div className={`rounded-3xl border-2 ${business.borderColor} overflow-hidden`}>
+                  {/* 业务板块头部 */}
+                  <div className={`${business.bgColor} px-8 py-6 border-b ${business.borderColor}`}>
+                    <div className="flex items-center gap-4">
+                      <div className={`w-12 h-12 rounded-2xl ${business.accentColor} flex items-center justify-center shadow-lg`}>
+                        <BusinessIcon className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-1">
+                          <h3 className={`text-2xl font-bold ${business.textColor}`}>
+                            {business.title}
+                          </h3>
+                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${business.bgColor} ${business.textColor} border ${business.borderColor}`}>
+                            {business.projectIds.length} 个项目
+                          </span>
+                        </div>
+                        <p className="text-muted-foreground text-sm">
+                          {business.subtitle}
+                        </p>
+                      </div>
                     </div>
-                  )}
-                  {/* 分类标签 */}
-                  <div className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold bg-black/70 backdrop-blur-sm text-white shadow-sm border border-white/10">
-                    {project.category}
+                    <p className="text-muted-foreground text-sm mt-4 leading-relaxed max-w-3xl">
+                      {business.description}
+                    </p>
                   </div>
-                  {/* 渐变遮罩 */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80" />
+
+                  {/* 项目卡片区域 */}
+                  <div className="p-6 bg-card/50">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {business.projectIds.map((projectId, idx) => {
+                        const project = getProjectById(projectId);
+                        if (!project) return null;
+
+                        return (
+                          <div
+                            key={project.id}
+                            onClick={() => openModal(project)}
+                            className={`group rounded-2xl bg-card border ${business.borderColor} hover:shadow-xl hover:border-opacity-60 transition-all duration-300 overflow-hidden cursor-pointer flex flex-col`}
+                          >
+                            {/* 左侧色条 + 内容 */}
+                            <div className="flex h-full">
+                              {/* 左侧色条 */}
+                              <div className={`w-1.5 ${business.accentColor} flex-shrink-0`} />
+
+                              {/* 内容区域 */}
+                              <div className="flex-1 flex flex-col">
+                                {/* 图片区域 */}
+                                <div className="relative h-40 overflow-hidden">
+                                  {project.image ? (
+                                    <img
+                                      src={project.image}
+                                      alt={project.title}
+                                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                                    />
+                                  ) : (
+                                    <div className="w-full h-full bg-secondary/30 flex items-center justify-center">
+                                      <ImageIcon className="w-10 h-10 text-primary/30" />
+                                    </div>
+                                  )}
+                                  {/* 分类标签 */}
+                                  <div className="absolute top-3 right-3 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-black/70 backdrop-blur-sm text-white">
+                                    {project.category}
+                                  </div>
+                                  {/* 渐变遮罩 */}
+                                  <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-60" />
+                                </div>
+
+                                {/* 文字内容 */}
+                                <div className="p-5 flex-grow flex flex-col">
+                                  <div className="flex items-start justify-between mb-1.5">
+                                    <h4 className={`text-lg font-bold group-hover:${business.textColor} transition-colors`}>
+                                      {project.title}
+                                    </h4>
+                                    <ArrowUpRight className={`w-4 h-4 text-muted-foreground group-hover:${business.textColor} transition-colors flex-shrink-0 mt-1`} />
+                                  </div>
+                                  <p className={`text-xs ${business.textColor} mb-2`}>{project.subtitle}</p>
+                                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed line-clamp-2 flex-grow">
+                                    {project.description}
+                                  </p>
+
+                                  {/* 亮点标签 */}
+                                  <div className="flex flex-wrap gap-1.5 mb-4">
+                                    {project.highlights.slice(0, 3).map((highlight, i) => (
+                                      <span
+                                        key={i}
+                                        className={`px-2 py-0.5 text-[10px] font-medium rounded-full ${business.bgColor} ${business.textColor} border ${business.borderColor}`}
+                                      >
+                                        {highlight}
+                                      </span>
+                                    ))}
+                                  </div>
+
+                                  {/* 查看详情 */}
+                                  <button className={`flex items-center gap-1.5 text-xs font-semibold ${business.textColor} hover:opacity-80 transition-colors mt-auto`}>
+                                    <span>查看详情</span>
+                                    <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
                 </div>
-
-                {/* 内容区域 */}
-                <div className="p-8 flex-grow flex flex-col">
-                  <div className="flex items-start justify-between mb-2">
-                    <h3 className="text-2xl font-bold group-hover:text-primary transition-colors">
-                      {project.title}
-                    </h3>
-                    <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-                  </div>
-                  <p className="text-sm text-primary/70 mb-3">{project.subtitle}</p>
-                  <p className="text-muted-foreground text-sm mb-6 leading-relaxed flex-grow">
-                    {project.description}
-                  </p>
-
-                  {/* 亮点 */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.highlights.map((highlight, i) => (
-                      <span
-                        key={i}
-                        className="px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary border border-primary/20"
-                      >
-                        {highlight}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* 查看详情 */}
-                  <button className="flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors mt-auto">
-                    <span>查看详情</span>
-                    <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-              </div>
-            </ScrollReveal>
-          ))}
+              </ScrollReveal>
+            );
+          })}
         </div>
       </div>
 
@@ -484,8 +576,8 @@ const ProjectCaseSection = () => {
               <X className="w-5 h-5" />
             </button>
 
-            {/* 头部Banner - 纯色渐变背景 */}
-            <div className="relative h-40 overflow-hidden rounded-t-3xl bg-gradient-to-br from-primary via-primary/80 to-gold/60">
+            {/* 头部Banner - 纯色背景 */}
+            <div className="relative h-40 overflow-hidden rounded-t-3xl bg-primary">
               {/* 装饰图案 */}
               <div className="absolute inset-0 opacity-10">
                 <div className="absolute top-4 right-4 w-32 h-32 border-2 border-white rounded-full" />
@@ -566,7 +658,7 @@ const ProjectCaseSection = () => {
                     {selectedProject.features.map((feature, i) => {
                       const IconComponent = iconMap[feature.icon] || Zap;
                       return (
-                        <div key={i} className="p-4 rounded-xl bg-gradient-card border border-border/30 hover:border-primary/30 transition-colors">
+                        <div key={i} className="p-4 rounded-xl bg-card border border-border/30 hover:border-primary/30 transition-colors">
                           <div className="flex items-center gap-3 mb-2">
                             <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
                               <IconComponent className="w-4 h-4 text-primary" />
@@ -598,7 +690,7 @@ const ProjectCaseSection = () => {
                 </div>
               )}
 
-              {/* 项目时间线 - 水平时间轴设计 */}
+              {/* 项目时间线 */}
               {selectedProject.timeline && (
                 <div className="mb-8">
                   <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
@@ -607,12 +699,12 @@ const ProjectCaseSection = () => {
                   </h3>
                   <div className="relative">
                     {/* 时间轴连接线 */}
-                    <div className="absolute top-4 left-4 right-4 h-0.5 bg-gradient-to-r from-primary via-gold to-accent opacity-30" />
+                    <div className="absolute top-4 left-4 right-4 h-0.5 bg-border" />
 
                     {/* 时间节点 */}
                     <div className="flex justify-between relative">
                       {selectedProject.timeline.map((item, i) => (
-                        <div key={i} className="flex flex-col items-center text-center" style={{ width: `${100 / selectedProject.timeline.length}%` }}>
+                        <div key={i} className="flex flex-col items-center text-center" style={{ width: `${100 / selectedProject.timeline!.length}%` }}>
                           {/* 节点圆点 */}
                           <div className={`w-8 h-8 rounded-full flex items-center justify-center z-10 shadow-md ${item.status === 'done'
                             ? 'bg-green-500'
@@ -644,7 +736,7 @@ const ProjectCaseSection = () => {
                 </div>
               )}
 
-              {/* 价值体现 - 分内外两栏 */}
+              {/* 价值体现 */}
               {(selectedProject.internalValue || selectedProject.externalValue) && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                   {/* 对内价值 */}
@@ -687,7 +779,7 @@ const ProjectCaseSection = () => {
 
               {/* 未来规划 */}
               {selectedProject.futureVision && (
-                <div className="p-5 rounded-2xl bg-gradient-to-r from-primary/5 via-gold/5 to-accent/5 border border-border/30">
+                <div className="p-5 rounded-2xl bg-secondary/50 border border-border/30">
                   <h4 className="text-sm font-bold mb-3 flex items-center gap-2">
                     <Sparkles className="w-4 h-4 text-gold-dark" />
                     未来规划
