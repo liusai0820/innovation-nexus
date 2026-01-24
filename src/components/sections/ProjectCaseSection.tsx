@@ -20,9 +20,10 @@ import {
   ChevronRight,
   BarChart3,
   Globe,
-  BookOpen,
-  Settings,
-  Rocket
+  DollarSign,
+  Compass,
+  Shield,
+  Activity
 } from "lucide-react";
 import ScrollReveal from "../ScrollReveal";
 
@@ -38,10 +39,11 @@ interface ProjectDetail {
   color: string;
   link?: string;
   problem?: string;
+  background?: string;  // 项目背景（替代problem）
   solution?: string;
   techStack?: string[];
   features?: Array<{ icon: string; title: string; desc: string }>;
-  metrics?: Array<{ value: string; label: string; change?: string }>;
+  metrics?: Array<{ value: string; label: string; change?: string; icon?: string; color?: string }>;
   timeline?: Array<{ phase: string; time: string; status: 'done' | 'in-progress' | 'planned' }>;
   customers?: string[];
   futureVision?: string[];
@@ -105,6 +107,86 @@ const businessLines: BusinessLine[] = [
 
 // 项目案例数据
 const projects: ProjectDetail[] = [
+  {
+    id: 3,
+    title: "工业互联网平台运营统筹",
+    category: "运营统筹",
+    subtitle: "推动平台从建设期向规范化运营期转型",
+    description: "作为中心与工赋中心的接口部门，充分履行委托方的统筹与赋能职责。通过战略引导、机制保障、资金拨付、模式创新、组织激活及资本驱动等多维扶持，成功推动平台跨入具备自我造血功能的规范化运营期，实现业务正向飞轮。",
+    highlights: ["回退资金3000万", "运营战略重构", "组织团队激活"],
+    image: "/shenzhen_factory.png",
+    color: "border-accent",
+    problem: "平台处于从建设向运营转型的关键阶段，亟需建立规范化运营机制、实现业务正向飞轮与自我造血功能。",
+    solution: "充分履行接口部门统筹职责，探索在战略引导、组织激活、资金保障、模式创新及生态重塑上持续发力和深度赋能。",
+    // 六大工作维度（对应绩效指标）
+    features: [
+      {
+        icon: "FileText",
+        title: "机制保障与规范化转型",
+        desc: "统筹推进平台由探索期向规范化运营期过渡，拟定并签订年度委托运营服务协议，明确权责利边界与收入分配机制"
+      },
+      {
+        icon: "Target",
+        title: "战略引导与KPI制定",
+        desc: "结合中心战略指引、平台战略定位、资产状况及运营要求，研究制定工赋中心年度KPI指标，确保战略目标可落地"
+      },
+      {
+        icon: "Layers",
+        title: "运营体系建设支持",
+        desc: "协助推进产品及服务矩阵开发、运营体系建设与完善，探索新质生产力服务平台等业务模式创新"
+      },
+      {
+        icon: "Users",
+        title: "组织优化与人才激活",
+        desc: "常态化跟进运营状况，研究推进组织架构、岗位序列、薪酬考核等制度修订，实施内部竞聘与重点事项报备"
+      },
+      {
+        icon: "Network",
+        title: "资源协调与业务协同",
+        desc: "协调创新中心内部相关业务所支持工赋中心运营，实现业务协同、资源共享、收益分成"
+      },
+      {
+        icon: "TrendingUp",
+        title: "资本驱动与基金落地",
+        desc: "推进工业互联网子基金落地，编制基金方案，对接LP与GP方，整合项目资源，构建产业+资本双轮驱动"
+      },
+    ],
+    // 核心成果指标
+    metrics: [
+      { value: "3000万", label: "回退资金", change: "重大经营创效", icon: "DollarSign", color: "text-yellow-600" },
+      { value: "战略重构", label: "运营方向明晰", change: "定位清晰可执行", icon: "Compass", color: "text-blue-600" },
+      { value: "组织激活", label: "架构与团队重组", change: "战略执行保障", icon: "Users", color: "text-purple-600" },
+      { value: "合规机制", label: "协议与制度完善", change: "双方权责明晰", icon: "Shield", color: "text-green-600" },
+    ],
+    // 关键完成情况（替代timeline）
+    timeline: [
+      { phase: "Q1", time: "规范运营：签订年度委托运营协议", status: "done" },
+      { phase: "Q2", time: "战略引导：主导编制工赋战略规划，探索业务创新", status: "done" },
+      { phase: "Q3", time: "组织重构：完成内部竞聘与人才配置优化", status: "done" },
+      { phase: "Q4", time: "资金保障：回退经费及资金拨付", status: "done" },
+    ],
+    // 对内价值
+    internalValue: [
+      "成功推动平台从建设期向规范化运营期平稳过渡，建立'以考核促运营、以协议护合规'的管理闭环",
+      "通过战略规划与业务创新指导，为平台实现业务正向飞轮和自我造血功能奠定基础",
+      "优化组织架构与人才配置，打造高水平运营引擎，激活团队效能",
+      "建立跨部门协同机制，整合中心内部资源形成合力",
+    ],
+    // 对外价值与核心亮点
+    externalValue: [
+      "🏆 重大经营创效：项目初验谈判中回退资金3000万元，显著优化经营性现金流，极大缓解运营压力",
+      "🏆 国家级资质突破：统筹助力平台入选工信部首批'重点培育中试平台'初步名单，获得国家级认可",
+      "业务模式创新：探索《粤港澳大湾区新质生产力服务平台运营实施方案》，实现新业务从0到1突破",
+      "资本路径拓宽：推进工业互联网子基金方案编制，构建产业+资本双轮驱动模式",
+    ],
+    // 持续优化方向
+    futureVision: [
+      "持续优化运营机制，提升平台自我造血能力与市场竞争力",
+      "加速工业互联网子基金落地，强化资本驱动效应",
+      "深化业务模式创新，拓展服务范围与品牌影响力",
+      "巩固国家级资质优势，承接重大专项与实现品牌价值变现",
+    ],
+  },
   {
     id: 0,
     title: "河套创新体系咨询",
@@ -346,57 +428,52 @@ const projects: ProjectDetail[] = [
     ],
   },
   {
-    id: 5,
-    title: "智慧招商系统",
+    id: 6,
+    title: "AI报告矩阵研发与应用",
     category: "AI创新应用",
-    subtitle: "基于情报平台的智能招商引资系统",
-    description: "依托产业情报平台数据能力，打造集企业画像、招商线索挖掘、投资匹配于一体的智慧招商系统，为园区和政府提供精准招商决策支持。",
-    highlights: ["情报平台赋能", "AI精准匹配", "招商全流程管理"],
-    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&q=80",
-    color: "border-accent",
-    problem: "传统招商依赖人脉关系和信息差，缺乏系统化的企业情报支撑，招商效率低、精准度差，难以实现产业链精准补链强链。",
-    solution: "整合情报平台多维数据源，利用AI进行企业画像分析与投资意向识别，实现招商线索智能推荐与全流程跟踪管理。",
-    techStack: ["Next.js", "Python", "知识图谱", "大语言模型", "Supabase", "企业数据API"],
-    features: [
-      { icon: "Search", title: "企业情报搜索", desc: "基于情报平台，多维度检索目标企业信息" },
-      { icon: "Network", title: "产业链图谱", desc: "可视化呈现产业上下游关系，识别补链强链机会" },
-      { icon: "Target", title: "AI精准匹配", desc: "智能分析企业投资意向，推荐高意向招商线索" },
-      { icon: "Building2", title: "企业画像分析", desc: "一键生成企业全景画像，辅助招商决策" },
-      { icon: "TrendingUp", title: "招商进度管理", desc: "可视化跟踪招商项目全流程状态" },
-      { icon: "BarChart3", title: "招商数据驾驶舱", desc: "实时展示招商成效与关键指标分析" },
-    ],
+    subtitle: "打造高韧性底层架构，实现复杂研究报告矩阵式突破",
+    description: "以Deep Research架构为底座，主动化解搜索底座停服危机，成功研发竞对分析等高难度报告模块，实现从单一画像到多维研究矩阵的跨越式发展。",
+    highlights: ["重构DR架构", "攻坚搜索平替", "拓宽报告矩阵"],
+    image: "/ai_report.png",
+    color: "border-primary",
+    link: "", // 待补充产品链接
+    background: "原企业画像维度单一，且因Bing API停服导致质量失稳。面对运维力量难以覆盖的紧急政务支撑需求，团队主动作为，启动了底层架构重构与高难度报告类型的专项攻坚。",
+    solution: "夯实Deep Research技术底座，通过问题分解与多源搜索平替提升检索深度；以此为基础，重点攻克竞对分析、技术路线等复杂报告模型，实现产品矩阵从0到1的丰富与工程化落地。",
     metrics: [
-      { value: "10万+", label: "企业数据", change: "情报平台" },
-      { value: "AI", label: "智能匹配", change: "精准推荐" },
-      { value: "全流程", label: "招商管理", change: "可视化" },
-      { value: "实时", label: "数据更新", change: "动态监测" },
+      { value: "2个", label: "新增报告模块", change: "竞对及技术路线模块落地" },
+      { value: "100%", label: "平台运维支撑", change: "完成搜索平替与个性化需求" },
+      { value: "10+次", label: "专项政务支撑", change: "含独角兽、出海专项等，产出400+篇报告" },
+      { value: "4项", label: "底层技术优化", change: "深研架构、语义排序等研发" }
+    ],
+    features: [
+      { icon: "Search", title: "深研架构底座", desc: "基于Deep Research研究成果，重构搜索优化逻辑，夯实研究底座。" },
+      { icon: "Layers", title: "矩阵化报告", desc: "突破竞对分析、行业标杆等高难度模版，支持多场景研究产出。" },
+      { icon: "Shield", title: "底座平替保障", desc: "化解Bing API停服风险，实现国产化平替，保障底座极高韧性。" },
+      { icon: "Zap", title: "高效政务响应", desc: "快速承接独角兽、创投企业等紧急专项，具备极强韧性支撑能力。" },
+      { icon: "Activity", title: "DIKI运营运维", desc: "主动解决日常复杂问题，通过技术手段满足业务侧个性化需求。" },
+      { icon: "TrendingUp", title: "业务订单撬动", desc: "高质量报告成果得到市场验证，直接助力多笔业务合同的达成。" }
     ],
     timeline: [
-      { phase: "需求调研", time: "2025 Q2", status: "done" },
-      { phase: "原型设计", time: "2025 Q3", status: "done" },
-      { phase: "MVP开发", time: "2025 Q4", status: "done" },
-      { phase: "试点运行", time: "2026 Q1", status: "in-progress" },
-      { phase: "功能迭代", time: "2026 Q2", status: "planned" },
+      { phase: "Q1", time: "底层技术优化预研", status: "done" },
+      { phase: "Q2", time: "竞对分析模块研发落地", status: "done" },
+      { phase: "Q3", time: "支撑10+次专项任务", status: "done" },
+      { phase: "Q4", time: "底层搜索平替，架构预研", status: "done" }
     ],
-    customers: ["园区招商部门", "地方政府投促局", "产业规划机构"],
     internalValue: [
-      "充分发挥情报平台数据价值，形成数据应用闭环",
-      "积累招商引资领域AI应用经验",
-      "打造可复用的招商解决方案模板",
-      "建立与园区、政府客户的深度合作关系",
+      "实现了从'单一工具'到'通用研究引擎'的技术跨越，沉淀了复杂报告自动生成的标准路径",
+      "在底座危机中主动补位，通过架构优化解决了长期存在的质量稳定性与维度单一难题",
+      "验证了'技术研发驱动业务增长'的逻辑，为后续开发更复杂的行业报告奠定了技术基础"
     ],
     externalValue: [
-      "为园区和政府提供智慧招商工具，提升招商效率",
-      "可作为SaaS产品向多个园区推广",
-      "可与产业研究服务打包，提供「情报+招商」一站式服务",
-      "助力区域产业链精准招商，推动高质量发展",
+      "高质量交付多项高层级专项任务，通过技术专业度直接撬动了业务订单合同的签订",
+      "竞对分析等新增报告类型填补了市场空白，显著增强了产品在泛研究场景的竞争力",
+      "为政务及企业用户提供了更具深度的决策支持，极大降低了深度调研的人工成本"
     ],
     futureVision: [
-      "接入更多权威企业数据源，扩大企业覆盖面",
-      "开发招商AI助手，支持自然语言交互查询",
-      "增加招商成效预测与投资回报分析功能",
-      "打造招商协作平台，支持多部门协同作战",
-    ],
+      "持续丰富报告矩阵类型，将Deep Research能力泛化至更多专业分析场景",
+      "优化底层智能体协同效率，打造具备'专家级'逻辑思维的深度研究平台",
+      "探索更多商业化落地路径，通过技术底座的高灵活性快速响应市场个性化需求"
+    ]
   },
 ];
 
@@ -404,7 +481,7 @@ const projects: ProjectDetail[] = [
 const iconMap: Record<string, any> = {
   FileText, Layers, Presentation, BarChart3, Sparkles, Globe,
   Network, Search, Target, Building2, Users, TrendingUp,
-  Zap, Clock, CheckCircle2, Cpu, BookOpen, Settings, Rocket
+  Zap, Clock, CheckCircle2, Cpu, Activity
 };
 
 const ProjectCaseSection = () => {
@@ -606,22 +683,29 @@ const ProjectCaseSection = () => {
 
             {/* 主体内容 */}
             <div className="p-8">
-              {/* 问题与解决方案 */}
-              {selectedProject.problem && selectedProject.solution && (
+              {/* 问题与解决方案 / 项目背景 */}
+              {(selectedProject.problem || selectedProject.background) && selectedProject.solution && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                   <div className="p-5 rounded-2xl bg-accent/5 border border-accent/20">
                     <div className="flex items-center gap-2 text-accent mb-2">
                       <Target className="w-4 h-4" />
-                      <span className="text-sm font-bold">痛点问题</span>
+                      <span className="text-sm font-bold">
+                        {selectedProject.background ? "项目背景" :
+                         selectedProject.category === "运营统筹" ? "转型挑战" : "痛点问题"}
+                      </span>
                     </div>
-                    <p className="text-sm text-muted-foreground">{selectedProject.problem}</p>
+                    <p className="text-sm text-muted-foreground text-justify leading-relaxed">
+                      {selectedProject.background || selectedProject.problem}
+                    </p>
                   </div>
                   <div className="p-5 rounded-2xl bg-green-500/5 border border-green-500/20">
                     <div className="flex items-center gap-2 text-green-600 mb-2">
                       <CheckCircle2 className="w-4 h-4" />
-                      <span className="text-sm font-bold">解决方案</span>
+                      <span className="text-sm font-bold">
+                        {selectedProject.category === "运营统筹" ? "统筹方案" : "解决方案"}
+                      </span>
                     </div>
-                    <p className="text-sm text-muted-foreground">{selectedProject.solution}</p>
+                    <p className="text-sm text-muted-foreground text-justify leading-relaxed">{selectedProject.solution}</p>
                   </div>
                 </div>
               )}
@@ -631,34 +715,62 @@ const ProjectCaseSection = () => {
                 <div className="mb-8">
                   <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
                     <TrendingUp className="w-5 h-5 text-primary" />
-                    核心指标
+                    {selectedProject.category === "运营统筹" ? "成效亮点" : "核心指标"}
                   </h3>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    {selectedProject.metrics.map((metric, i) => (
-                      <div key={i} className="p-4 rounded-xl bg-secondary/50 border border-border/30 text-center">
-                        <div className="text-2xl font-black text-primary">{metric.value}</div>
-                        <div className="text-sm font-medium">{metric.label}</div>
-                        {metric.change && (
-                          <div className="text-xs text-muted-foreground mt-1">{metric.change}</div>
-                        )}
-                      </div>
-                    ))}
+                    {selectedProject.metrics.map((metric, i) => {
+                      // 图标映射
+                      const MetricIcon = metric.icon === "DollarSign" ? DollarSign
+                        : metric.icon === "Compass" ? Compass
+                        : metric.icon === "Users" ? Users
+                        : metric.icon === "Shield" ? Shield
+                        : null;
+
+                      return (
+                        <div key={i} className="p-4 rounded-xl bg-secondary/50 border border-border/30 text-center hover:shadow-lg transition-shadow">
+                          {/* 图标 */}
+                          {MetricIcon && (
+                            <div className="flex justify-center mb-3">
+                              <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${
+                                metric.icon === "DollarSign" ? "from-yellow-400/20 to-yellow-600/20" :
+                                metric.icon === "Compass" ? "from-blue-400/20 to-blue-600/20" :
+                                metric.icon === "Users" ? "from-purple-400/20 to-purple-600/20" :
+                                "from-green-400/20 to-green-600/20"
+                              } flex items-center justify-center`}>
+                                <MetricIcon className={`w-6 h-6 ${metric.color || "text-primary"}`} />
+                              </div>
+                            </div>
+                          )}
+                          <div className="text-2xl font-black text-primary">{metric.value}</div>
+                          <div className="text-sm font-medium">{metric.label}</div>
+                          {metric.change && (
+                            <div className="text-xs text-muted-foreground mt-1">{metric.change}</div>
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               )}
 
-              {/* 功能特点 */}
+              {/* 功能特点/支持维度 */}
               {selectedProject.features && (
                 <div className="mb-8">
                   <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
                     <Sparkles className="w-5 h-5 text-gold-dark" />
-                    核心功能
+                    {selectedProject.category === "运营统筹" ? "支持维度（对应绩效指标）" : "核心功能"}
                   </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <div className={`grid grid-cols-1 ${selectedProject.category === "运营统筹" ? "md:grid-cols-2" : "md:grid-cols-2 lg:grid-cols-3"} gap-4`}>
                     {selectedProject.features.map((feature, i) => {
                       const IconComponent = iconMap[feature.icon] || Zap;
                       return (
-                        <div key={i} className="p-4 rounded-xl bg-card border border-border/30 hover:border-primary/30 transition-colors">
+                        <div key={i} className="p-4 rounded-xl bg-gradient-card border border-border/30 hover:border-primary/30 transition-colors relative">
+                          {/* 运营统筹项目：右上角添加完成标记 */}
+                          {selectedProject.category === "运营统筹" && (
+                            <div className="absolute top-3 right-3">
+                              <CheckCircle2 className="w-4 h-4 text-green-600" />
+                            </div>
+                          )}
                           <div className="flex items-center gap-3 mb-2">
                             <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
                               <IconComponent className="w-4 h-4 text-primary" />
@@ -695,7 +807,7 @@ const ProjectCaseSection = () => {
                 <div className="mb-8">
                   <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
                     <Clock className="w-5 h-5 text-primary" />
-                    项目进度
+                    {selectedProject.category === "运营统筹" ? "年度工作里程碑" : "项目进度"}
                   </h3>
                   <div className="relative">
                     {/* 时间轴连接线 */}
@@ -725,8 +837,8 @@ const ProjectCaseSection = () => {
                             }`}>
                             {item.phase}
                           </span>
-                          {/* 时间 */}
-                          <span className="text-[10px] text-muted-foreground mt-0.5">
+                          {/* 时间/详细说明 */}
+                          <span className="text-[10px] text-muted-foreground mt-0.5 px-2 leading-relaxed">
                             {item.time}
                           </span>
                         </div>
@@ -744,7 +856,7 @@ const ProjectCaseSection = () => {
                     <div className="p-5 rounded-2xl bg-primary/5 border border-primary/20">
                       <h4 className="text-sm font-bold text-primary mb-3 flex items-center gap-2">
                         <Building2 className="w-4 h-4" />
-                        对内价值（效率提升）
+                        {selectedProject.category === "运营统筹" ? "对内统筹成效" : "对内价值（效率提升）"}
                       </h4>
                       <ul className="space-y-2">
                         {selectedProject.internalValue.map((item, i) => (
@@ -761,8 +873,8 @@ const ProjectCaseSection = () => {
                   {selectedProject.externalValue && (
                     <div className="p-5 rounded-2xl bg-gold/5 border border-gold/20">
                       <h4 className="text-sm font-bold text-gold-dark mb-3 flex items-center gap-2">
-                        <Globe className="w-4 h-4" />
-                        对外价值（产品输出）
+                        <Sparkles className="w-4 h-4" />
+                        {selectedProject.category === "运营统筹" ? "对外核心亮点" : "对外价值（产品输出）"}
                       </h4>
                       <ul className="space-y-2">
                         {selectedProject.externalValue.map((item, i) => (
@@ -782,7 +894,7 @@ const ProjectCaseSection = () => {
                 <div className="p-5 rounded-2xl bg-secondary/50 border border-border/30">
                   <h4 className="text-sm font-bold mb-3 flex items-center gap-2">
                     <Sparkles className="w-4 h-4 text-gold-dark" />
-                    未来规划
+                    {selectedProject.category === "运营统筹" ? "持续优化方向" : "未来规划"}
                   </h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                     {selectedProject.futureVision.map((item, i) => (
