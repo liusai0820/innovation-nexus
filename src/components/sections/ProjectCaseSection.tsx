@@ -620,7 +620,7 @@ const ProjectCaseSection = () => {
               重点<span className="text-gradient-primary">项目案例</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              三大核心业务板块 × 六个重点项目，点击卡片查看详情
+              三大核心业务板块 × 八个重点项目，点击卡片查看详情
             </p>
           </div>
         </ScrollReveal>
