@@ -76,9 +76,9 @@ const projects: ProjectDetail[] = [
     ],
     metrics: [
       { value: "20个", label: "SaaS账号", change: "覆盖全区“8+3”重点产业招商" },
-      { value: "1700+", label: "企业成效分析", change: "输出下一步工作建议" },
+      { value: "1700+", label: "招商成效分析", change: "输出下一步工作建议" },
       { value: "95万", label: "中心首单合同", change: "情报平台系统首个销售订单" },
-      { value: "3场", label: "招商宣讲培训", change: "面向青年领导干部讲解方法论" },
+      { value: "N场", label: "招商宣讲&培训", change: "区领导、青年领导干部、投促局" },
     ],
     timeline: [
       { phase: "书记汇报（高调亮相）", time: "2023 Q4", status: "done" },
@@ -104,7 +104,7 @@ const projects: ProjectDetail[] = [
     subtitle: "集成电路产业信息服务",
     description:
       "围绕集成电路产业，提供国际前沿工艺技术路线、供应链成本、行业竞争格局与技术趋势的系统分析服务，通过情报平台子平台账号，为头部企业与机构供给高质量数据与深度报告。",
-    highlights: ["集成电路专属数据", "工艺路线深度分析", "供应链成本评估", "头部客户验证"],
+    highlights: ["集成电路专业数据", "工艺路线深度分析", "供应链成本评估", "头部客户验证"],
     image: "/ai_think_tank.png",
     color: "border-primary",
     problem:
@@ -112,15 +112,15 @@ const projects: ProjectDetail[] = [
     solution:
       "基于情报平台，搭建“集成电路产业信息服务子平台”，为客户开通账号服务，提供覆盖工艺研发、行业分析、终端拆解、产线跟踪等维度的结构化数据与分析报告，支持企业战略决策与研发布局。",
     features: [
-      { icon: "Cpu", title: "工艺研发情报", desc: "跟踪国际前沿工艺技术路线与关键节点厂商，为研发决策提供参考" },
+      { icon: "Cpu", title: "前沿工艺研发", desc: "跟踪国际前沿工艺技术路线与关键节点厂商，为研发决策提供参考" },
       { icon: "BarChart3", title: "行业与竞争分析", desc: "从市场规模、竞争格局、技术路径等多维度输出行业分析报告" },
       { icon: "FileText", title: "终端拆解数据", desc: "通过终端产品拆解，解析关键芯片与材料选型，反推供应链构成" },
       { icon: "Network", title: "产线与供应链跟踪", desc: "持续跟踪重点产线与供应链变化，评估成本结构与风险点" },
     ],
     metrics: [
       { value: "550万", label: "当年销售订单", change: "市场反响良好，客户口碑佳" },
-      { value: "多家", label: "产业龙头客户", change: "服务新凯来、荣耀、微电子所、鹏芯微、鹏新旭等" },
-      { value: "长期", label: "数据沉淀", change: "前沿技术趋势与分析报告本地落库" },
+      { value: "行业龙头", label: "主要客户", change: "服务新凯来、荣耀、微电子所、鹏芯微、鹏新旭等" },
+      { value: "高质量", label: "数据沉淀", change: "前沿技术趋势与分析报告本地落库" },
     ],
     timeline: [
       { phase: "企业走访（意向收集）", time: "2024 Q2", status: "done" },
@@ -355,28 +355,28 @@ const projects: ProjectDetail[] = [
       {
         icon: "Search",
         title: "感知引擎",
-        desc: "基于尽调框架对项目进行全维度信息感知与整理，构建“项目前世今生”知识底座",
+        desc: "基于尽调框架对项目进行全维度信息感知与整理，构建项目标的知识底座",
       },
       {
         icon: "Target",
         title: "推理引擎",
-        desc: "由负面假设出发，驱动高强度逻辑攻防与反向论证，帮助暴露关键风险点与不合理假设",
+        desc: "由负面假设出发，驱动高强度逻辑攻防与反向论证，帮助暴露项目关键风险点",
       },
       {
         icon: "Zap",
         title: "行动引擎",
-        desc: "将线上思辨过程结构化为线下行动指南，形成可执行的访谈提纲、调研路径与行动清单",
+        desc: "将线上思辨过程与风险点结构化为线下行动指南，形成可执行的访谈提纲、调研路径与行动清单",
       },
       {
         icon: "Layers",
         title: "数据底座",
-        desc: "沉淀企业画像、竞对分析、技术分析等结构化数据，为多项目、多周期投研提供可复用资产",
+        desc: "沉淀企业画像、竞对分析、技术分析等研究分析框架，高效收敛数据范围，为多项目、多周期投研提供可复用资产",
       },
     ],
     metrics: [
-      { value: "3", label: "智能引擎", change: "感知 / 推理 / 行动" },
-      { value: "3", label: "数据维度", change: "企业画像 / 竞对 / 技术分析" },
-      { value: "闭环", label: "投研流程", change: "信息→假设→验证→报告" },
+      { value: "心流引导", label: "心灵减负", change: "将尽调重构为侦探破案，将高认知负荷工作转化为高沉浸度、高激励的探索过程" },
+      { value: "白盒化", label: "信任基础", change: "所有尽调过程完全可视化。用户可追溯任意论断的来源" },
+      { value: "人机协同", label: "交互理念", change: "保留结论与数据的选择权，给予专业人士充足的尊严与掌控感" },
     ],
     timeline: [
       { phase: "概念提出（内部研讨）", time: "2025 Q3", status: "done" },
@@ -589,7 +589,7 @@ const ProjectCaseSection = () => {
                 <div className="mb-8">
                   <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
                     <TrendingUp className="w-5 h-5 text-primary" />
-                    核心指标
+                    {selectedProject.id === 4 ? "设计理念" : "核心指标"}
                   </h3>
                   <div
                     className={`grid gap-4 ${
@@ -616,7 +616,7 @@ const ProjectCaseSection = () => {
                 <div className="mb-8">
                   <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
                     <Sparkles className="w-5 h-5 text-gold-dark" />
-                    核心功能
+                    {selectedProject.id === 4 ? "系统架构" : "核心功能"}
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {selectedProject.features.map((feature, i) => {
