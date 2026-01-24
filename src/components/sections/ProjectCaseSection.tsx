@@ -23,7 +23,10 @@ import {
   DollarSign,
   Compass,
   Shield,
-  Activity
+  Activity,
+  BookOpen,
+  Settings,
+  Rocket
 } from "lucide-react";
 import ScrollReveal from "../ScrollReveal";
 
@@ -89,7 +92,7 @@ const businessLines: BusinessLine[] = [
     borderColor: "border-accent/30",
     bgColor: "bg-accent/5",
     textColor: "text-accent",
-    projectIds: [3, 5], // 工业互联网平台运营、智慧招商系统
+    projectIds: [3, 5, 6], // 工业互联网平台运营统筹、福田招商系统、产业特色数据
   },
   {
     id: "innovation",
@@ -101,7 +104,7 @@ const businessLines: BusinessLine[] = [
     borderColor: "border-primary/30",
     bgColor: "bg-primary/5",
     textColor: "text-primary",
-    projectIds: [4, 1], // 金融业务大模型产品、SlideCraft AI
+    projectIds: [4, 1, 8], // 金融diki研发、SlideCraft AI、AI报告矩阵
   },
 ];
 
@@ -162,7 +165,7 @@ const projects: ProjectDetail[] = [
     description:
       "围绕集成电路产业，提供国际前沿工艺技术路线、供应链成本、行业竞争格局与技术趋势的系统分析服务，通过情报平台子平台账号，为头部企业与机构供给高质量数据与深度报告。",
     highlights: ["集成电路专业数据", "工艺路线深度分析", "供应链成本评估", "头部客户验证"],
-    image: "/ai_think_tank.png",
+    image: "/semiconductor_chip.jpg",
     color: "border-primary",
     problem:
       "集成电路产业技术迭代快、链条长，企业在前沿工艺路线判断、供应链成本评估、行业竞争格局与技术趋势分析上，缺乏系统化、高时效、可验证的数据与情报支撑。",
@@ -436,7 +439,7 @@ const projects: ProjectDetail[] = [
     ],
   },
   {
-    id: 3,
+    id: 7,
     title: "工业互联网平台运营",
     category: "平台运营",
     subtitle: "工业互联网平台规范化运营",
@@ -531,7 +534,7 @@ const projects: ProjectDetail[] = [
     ],
   },
   {
-    id: 6,
+    id: 8,
     title: "AI报告矩阵研发与应用",
     category: "AI创新应用",
     subtitle: "打造高韧性底层架构，实现复杂研究报告矩阵式突破",

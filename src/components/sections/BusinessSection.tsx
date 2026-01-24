@@ -6,7 +6,7 @@ const businesses = [
     icon: FileText,
     title: "智库咨询转型",
     subtitle: "AI赋能的新型智库",
-    description: "以《河套深港科技创新合作区创新体系建设综合咨询研究课题》为典型代表，利用AI大模型全过程赋能，实现小团队高效率大产出。作为首个大型咨询项目AI全过程赋能的典型案例，已在内部做专题分享，代表智库咨询服务的进化升级。",
+    description: "以河套创新体系咨询课题为代表，利用AI大模型全过程赋能，实现小团队高效率大产出，代表智库咨询服务的进化升级。",
     highlights: ["AI全流程赋能", "小团队大产出", "内部专题分享"],
     color: "from-primary to-primary/60",
     iconBg: "bg-primary/15",

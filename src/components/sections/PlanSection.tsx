@@ -44,7 +44,7 @@ const strategicPlans = [
     subtitle: "从单点工具到产品矩阵",
     description: "基于已验证的AI工具进行产品化改造，建立统一的产品架构和用户体系，形成可复制、可销售的AI工具产品矩阵。",
     badges: ["产品化", "可复制"],
-    image: "/ai_ppt_tool.png",
+    image: "/plan_3_enterprise.png",
     priority: "核心引擎",
     color: "text-primary",
     priorityBg: "bg-primary/10 text-primary",
