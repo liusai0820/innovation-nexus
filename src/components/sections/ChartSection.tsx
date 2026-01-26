@@ -12,7 +12,7 @@ const yearlyTrendData = [
   { year: "2022", revenue: 572.2, cost: 455.8, headcount: 10, perCapita: 57.2, perCapitaCost: 45.6 },
   { year: "2023", revenue: 824.2, cost: 496.4, headcount: 11, perCapita: 74.9, perCapitaCost: 45.1 },
   { year: "2024", revenue: 1016.3, cost: 667.9, headcount: 11, perCapita: 92.4, perCapitaCost: 60.7 },
-  { year: "2025", revenue: 1050.2, cost: 611.94, headcount: 10, perCapita: 105.0, perCapitaCost: 61.2 },
+  { year: "2025", revenue: 1030.2, cost: 631.25, headcount: 10, perCapita: 103.0, perCapitaCost: 63.1 },
 ];
 
 // 业务类型数据
@@ -20,7 +20,7 @@ const businessTypeData = [
   { year: "2022", 项目管理: 567.35, 课题咨询: 4.8, 情报平台: 0, total: 572.15 },
   { year: "2023", 项目管理: 626.26, 课题咨询: 54.6, 情报平台: 143.32, total: 824.18 },
   { year: "2024", 项目管理: 623.49, 课题咨询: 0, 情报平台: 392.76, total: 1016.25 },
-  { year: "2025", 项目管理: 97.6, 课题咨询: 340.2, 情报平台: 612.4, total: 1050.2 },
+  { year: "2025", 项目管理: 97.6, 课题咨询: 320.2, 情报平台: 612.4, total: 1030.2 },
 ];
 
 // 客户来源数据
@@ -28,7 +28,7 @@ const customerSourceData = [
   { year: "2022", 市发改委: 203.77, 河套合作区: 363.58, 外地政府: 0, 区级政府: 0, 企业客户: 4.8, total: 572.15 },
   { year: "2023", 市发改委: 260.48, 河套合作区: 324.56, 外地政府: 49.6, 区级政府: 41.22, 企业客户: 148.32, total: 824.18 },
   { year: "2024", 市发改委: 119.5, 河套合作区: 421.54, 外地政府: 0, 区级政府: 82.45, 企业客户: 392.76, total: 1016.25 },
-  { year: "2025", 市发改委: 48.72, 河套合作区: 364.2, 外地政府: 0, 区级政府: 91.66, 企业客户: 545.62, total: 1050.2 },
+  { year: "2025", 市发改委: 48.72, 河套合作区: 344.2, 外地政府: 0, 区级政府: 91.66, 企业客户: 545.62, total: 1030.2 },
 ];
 
 // 课题明细数据（来自CSV）
@@ -60,7 +60,7 @@ const projectDetails: Record<string, Array<{ name: string; customer: string; typ
   ],
   "2025": [
     { name: "集成电路产业信息咨询服务", customer: "企业客户", type: "情报平台", amount: 545.62 },
-    { name: "河套深港科技创新合作区深圳园区创新体系建设综合咨询项目", customer: "河套合作区", type: "课题咨询", amount: 340.2 },
+    { name: "河套深港科技创新合作区深圳园区创新体系建设综合咨询项目", customer: "河套合作区", type: "课题咨询", amount: 320.2 },
     { name: "产业图谱招商系统服务项目", customer: "区级政府", type: "情报平台", amount: 66.78 },
     { name: "重大装备和关键零部件研制扶持计划项目管理服务", customer: "市发改委", type: "项目管理", amount: 44.7 },
     { name: "中科飞测有关项目核查评审服务工作", customer: "市发改委", type: "项目管理", amount: 4.02 },
@@ -74,12 +74,12 @@ const projectDetails: Record<string, Array<{ name: string; customer: string; typ
 
 // 团队核心能力雷达图
 const capabilityData = [
-  { subject: "AI技术落地", A: 95, fullMark: 100 },
-  { subject: "行业洞察", A: 85, fullMark: 100 },
-  { subject: "项目交付", A: 90, fullMark: 100 },
-  { subject: "产品创新", A: 88, fullMark: 100 },
-  { subject: "战略规划", A: 82, fullMark: 100 },
-  { subject: "数据分析", A: 92, fullMark: 100 },
+  { subject: "AI技术落地", A: 100, fullMark: 100 },
+  { subject: "行业洞察", A: 100, fullMark: 100 },
+  { subject: "项目交付", A: 100, fullMark: 100 },
+  { subject: "产品创新", A: 100, fullMark: 100 },
+  { subject: "战略规划", A: 100, fullMark: 100 },
+  { subject: "数据分析", A: 100, fullMark: 100 },
 ];
 
 // 金色系配色方案

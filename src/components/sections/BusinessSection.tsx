@@ -4,7 +4,7 @@ import ScrollReveal from "../ScrollReveal";
 const businesses = [
   {
     icon: FileText,
-    title: "智库咨询转型",
+    title: "智库业务转型赋能",
     subtitle: "AI赋能的新型智库",
     description: "以河套创新体系咨询课题为代表，利用AI大模型全过程赋能，实现小团队高效率大产出，代表智库咨询服务的进化升级。",
     highlights: ["AI全流程赋能", "小团队大产出", "内部专题分享"],
@@ -15,7 +15,7 @@ const businesses = [
   },
   {
     icon: Globe,
-    title: "平台运营落地",
+    title: "平台创新运营探索",
     subtitle: "招商系统与数据平台",
     description: "构建现代化招商引资系统，整合产业数据资源，打造一站式数字化招商服务平台。通过数据驱动，精准匹配企业需求与园区资源，提升招商引资效率。",
     highlights: ["招商管理系统", "产业数据平台", "智能匹配引擎"],
@@ -26,7 +26,7 @@ const businesses = [
   },
   {
     icon: Brain,
-    title: "创新应用开发",
+    title: "模型原生产品构建",
     subtitle: "大模型解决方案落地",
     description: "深耕AI技术应用场景，开发产业链图谱、智能PPT、思维导图等创新工具，赋能政务工作效率提升。将前沿技术转化为实际生产力。",
     highlights: ["AI画产业链图谱", "AI智能PPT生成", "AI思维导图绘制"],

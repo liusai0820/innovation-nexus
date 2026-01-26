@@ -43,17 +43,17 @@ const HeroSection = () => {
 
         {/* 副标题 */}
         <p className="text-xl md:text-2xl text-foreground font-medium mb-10 max-w-3xl mx-auto animate-fade-in leading-relaxed drop-shadow-sm" style={{ animationDelay: "0.3s" }}>
-          聚焦智库咨询 · 平台交付 · AI创新应用
+          赋能智库·平台运营·产品构建
           <br className="hidden md:block" />
-          <span className="text-sm md:text-lg mt-2 block text-foreground/80 font-normal">以数据驱动决策，以技术赋能业务，构建高质量发展新引擎</span>
+          <span className="text-sm md:text-lg mt-2 block text-foreground/80 font-normal">始于User，进阶于Wrapper，致力于Creator</span>
         </p>
 
         {/* 创新荣誉标签 */}
         <div className="flex flex-wrap justify-center gap-4 mb-14 animate-fade-in" style={{ animationDelay: "0.5s" }}>
           {[
-            { Icon: Trophy, text: "公司内部创新先锋队", color: "text-gold", border: "border-gold/30", bg: "bg-gold/5" },
-            { Icon: Award, text: "率先AI转型部门", color: "text-primary", border: "border-primary/30", bg: "bg-primary/5" },
-            { Icon: Zap, text: "大模型落地先行者", color: "text-accent", border: "border-accent/30", bg: "bg-accent/5" },
+            { Icon: Trophy, text: "智库业务转型赋能者", color: "text-gold", border: "border-gold/30", bg: "bg-gold/5" },
+            { Icon: Award, text: "平台创新运营探索者", color: "text-primary", border: "border-primary/30", bg: "bg-primary/5" },
+            { Icon: Zap, text: "模型原生产品创造者", color: "text-accent", border: "border-accent/30", bg: "bg-accent/5" },
           ].map((item, idx) => (
             <div key={idx} className={`inline-flex items-center gap-2 px-6 py-3 rounded-full ${item.bg} backdrop-blur-md border ${item.border} shadow-lg hover:scale-105 transition-transform duration-300 cursor-default`}>
               <item.Icon className={`w-5 h-5 ${item.color}`} />
@@ -74,7 +74,7 @@ const HeroSection = () => {
           <div className="bg-card/90 backdrop-blur-md border border-white/20 p-6 rounded-2xl flex items-center justify-center gap-4 transform hover:-translate-y-1 transition-all duration-300 shadow-xl">
             <div className="p-3 bg-gold/20 rounded-xl"><TrendingUp className="w-8 h-8 text-gold" /></div>
             <div className="text-left">
-              <div className="text-3xl font-bold text-foreground">1050<span className="text-sm text-muted-foreground ml-1">万</span></div>
+              <div className="text-3xl font-bold text-foreground">1030.2<span className="text-sm text-muted-foreground ml-1">万</span></div>
               <div className="text-xs text-uppercase text-muted-foreground tracking-wider">年度营收</div>
             </div>
           </div>

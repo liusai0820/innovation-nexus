@@ -6,7 +6,7 @@ const highlights = [
   {
     icon: TrendingUp,
     label: "年度收入",
-    value: 1050.2,
+    value: 1030.2,
     suffix: "万",
     color: "text-primary",
     bgColor: "bg-primary/10",
@@ -15,7 +15,7 @@ const highlights = [
   {
     icon: Target,
     label: "年度成本",
-    value: 611.94,
+    value: 631.25,
     suffix: "万",
     color: "text-accent",
     bgColor: "bg-accent/10",
@@ -24,7 +24,7 @@ const highlights = [
   {
     icon: Zap,
     label: "年度利润",
-    value: 438.26,
+    value: 398.95,
     suffix: "万",
     color: "text-gold-dark",
     bgColor: "bg-gold/10",
@@ -33,7 +33,7 @@ const highlights = [
   {
     icon: Users,
     label: "利润率",
-    value: 41.7,
+    value: 38.7,
     suffix: "%",
     color: "text-primary",
     bgColor: "bg-primary/10",
@@ -94,13 +94,13 @@ const HighlightSection = () => {
           <div className="mt-12 p-6 rounded-2xl bg-card border border-border/50 text-center shadow-sm">
             <p className="text-muted-foreground">
               <span className="text-foreground font-semibold">收支健康度达标</span> ·
-              部门收入/成本比值 = <span className="text-gradient-gold font-bold">171.6%</span>，
+              部门收入/成本比值 = <span className="text-gradient-gold font-bold">163.2%</span>，
               超额完成盈亏平衡目标
             </p>
           </div>
         </ScrollReveal>
       </div>
-    </section>
+    </section >
   );
 };
 

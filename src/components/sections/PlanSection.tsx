@@ -12,116 +12,115 @@ import {
 const strategicPlans = [
   {
     id: 0,
-    title: "底层技术架构优化升级",
-    subtitle: "夯实技术底座，提升系统韧性",
-    description: "持续优化Deep Research深度研究框架、搜索底座国产化平替、语义排序与智能检索等核心技术，为上层产品提供稳定可靠的技术支撑。",
-    badges: ["技术底座", "高可靠性"],
+    title: "组织OPC化",
+    subtitle: "【全员全栈】打造AI杠杆型学习组织与超级个体",
+    description: "打破传统科层制，通过AI赋能让基层具备中层视野，打造一个个'一人即队伍'的超级个体。同步推进研发本地化，将核心技术架构掌控权收回，构建敏捷、自主、学习型的AI原生组织。",
+    badges: ["全员全栈", "超级个体", "架构自主"],
     image: "/plan_1_product.png",
     priority: "核心基础",
     color: "text-primary",
     priorityBg: "bg-primary/10 text-primary",
     content: {
       foundation: {
-        title: "核心技术方向",
+        title: "组织变革路径",
         items: [
-          { name: "Deep Research框架", desc: "深度研究架构优化与性能提升", status: "进行中" },
-          { name: "搜索底座平替", desc: "国产化平替方案，化解API停服风险", status: "已完成" },
-          { name: "语义排序优化", desc: "智能检索与语义理解能力", status: "已完成" },
-          { name: "系统韧性设计", desc: "高可用性与故障恢复能力", status: "进行中" },
+          { name: "全员全栈", desc: "打破职能边界，AI赋能全员具备全栈开发能力", status: "进行中" },
+          { name: "能力升维", desc: "没有AI，能力降维；有了AI，能力升维", status: "核心理念" },
+          { name: "研发本地化", desc: "收回外包与API依赖，实现核心代码与架构自主可控", status: "关键举措" },
+          { name: "学习型组织", desc: "建立AI最佳实践共享机制，全员持续迭代", status: "长期目标" },
         ]
       },
-      achievements: "成功化解Bing API停服危机，构建具备极高韧性的技术底座，支撑400+篇报告生成，系统可用性达99.9%。",
+      achievements: "通过AI杠杆效应，极大释放个体潜能，实现组织结构的扁平化与网状化。化解Bing API危机，重构Deep Research底层，证明了本地化研发团队的战斗力。",
       targets: [
-        { label: "系统可用性", value: "99.9%", desc: "高可靠性保障" },
-        { label: "报告产能", value: "400+", unit: "篇/年" },
-        { label: "性能提升", value: "40%", desc: "检索效率提升" },
+        { label: "全员AI率", value: "100%", desc: "全员掌握AI编程" },
+        { label: "人效倍增", value: "5x", desc: "单位产出飞跃" },
+        { label: "自主可控", value: "100%", desc: "核心架构本地化" },
       ]
     }
   },
   {
     id: 1,
-    title: "AI工具产品化拓展开发",
-    subtitle: "从单点工具到产品矩阵",
-    description: "基于已验证的AI工具进行产品化改造，建立统一的产品架构和用户体系，形成可复制、可销售的AI工具产品矩阵。",
-    badges: ["产品化", "可复制"],
+    title: "业务数字化",
+    subtitle: "【对内降本增效】吃自己的狗粮，做能卖的产品",
+    description: "坚持'吃自己的狗粮'（Dogfooding），从解决内部咨询、研究的高频痛点出发，将工作流固化为AI工具。在实现内部极致降本增效的同时，将成熟工具封装为标准化SaaS产品，探索外部商业价值。",
+    badges: ["内用外售", "降本增效", "工具SaaS化"],
     image: "/plan_3_enterprise.png",
     priority: "核心引擎",
     color: "text-primary",
     priorityBg: "bg-primary/10 text-primary",
     content: {
       foundation: {
-        title: "2025已验证产品",
+        title: "数字化工具矩阵",
         items: [
-          { name: "SlideAI智能PPT", desc: "一键生成专业演示文稿", link: "ppt.gwy.life", status: "已上线" },
-          { name: "智绘链图产业分析", desc: "AI驱动产业链可视化分析", link: "diki.gwy.life", status: "已上线" },
-          { name: "AI思维导图", desc: "智能结构化思维工具", status: "内测中" },
-          { name: "金融投研助手", desc: "面向机构的智能分析工具", status: "开发中" },
+          { name: "SlideAI", desc: "解决汇报材料排版痛点，数小时工作压缩至分钟级", link: "ppt.gwy.life", status: "已应用" },
+          { name: "智绘链图", desc: "解决产业梳理繁琐痛点，一键生成全景图谱", link: "diki.gwy.life", status: "已应用" },
+          { name: "投研助手", desc: "解决尽调信息碎片痛点，自动化构建验证逻辑", status: "开发中" },
+          { name: "思维导图", desc: "解决创意结构化痛点，辅助快速输出方案", status: "内测中" },
         ]
       },
-      strategy: "将内部验证成熟的AI工具进行产品化改造，建立统一的产品架构和用户体系，形成'AI工具矩阵'品牌。",
+      strategy: "内部痛点 → 敏捷开发 → 内部验证 → 降本增效 → 产品封装 → 外部商业化。只做自己真正需要并验证过的产品。",
       actions: [
-        { title: "产品标准化", desc: "统一产品架构、用户体系、付费模式" },
-        { title: "功能深化", desc: "SlideAI增加模板市场，智绘链图增加数据订阅" },
-        { title: "新品研发", desc: "AI市场分析、AI竞品对标等垂直工具" },
+        { title: "内部打磨", desc: "在真实高压业务场景中反复迭代" },
+        { title: "标准封装", desc: "建立统一的账户、计费与API体系" },
+        { title: "价值外溢", desc: "将在内部证明成功的工具推向市场" },
       ],
       metrics: [
-        { label: "产品矩阵", value: "6+", unit: "款" },
-        { label: "注册用户", value: "1000+", unit: "人" },
-        { label: "产品收入", value: "50+", unit: "万" },
+        { label: "工具矩阵", value: "6+", unit: "款" },
+        { label: "效率提升", value: "80%", desc: "核心环节工时" },
+        { label: "产品营收", value: "50+", unit: "万" },
       ]
     }
   },
   {
     id: 2,
-    title: "市场产品服务体系构建",
-    subtitle: "面向市场的完整产品矩阵",
-    description: "构建包括DILI尽调引擎、招商系统、AI报告生成等在内的市场化产品服务体系，形成可持续的商业模式。",
-    badges: ["市场化", "商业模式"],
+    title: "产品AI化",
+    subtitle: "【对外产品创新】业务Know-How + AI原生",
+    description: "拒绝简单的'套壳'应用，深度融合智库多年的行业Know-How与AI原生能力。重点打造'AI产业信息服务'与'AI决策辅助'两大高壁垒产品线，提供传统服务无法企及的深度洞察与决策支持。",
+    badges: ["AI原生", "行业壁垒", "决策智能"],
     image: "/plan_2_gov.png",
     priority: "战略支柱",
     color: "text-gold-dark",
     priorityBg: "bg-gold/10 text-gold-dark",
     content: {
       foundation: {
-        title: "核心产品",
+        title: "两大核心方向",
         items: [
-          { name: "DILI尽调引擎", desc: "智能企业尽职调查分析平台，加速投资决策" },
-          { name: "招商系统", desc: "AI驱动的精准招商引资工具，助力区域发展" },
-          { name: "AI报告生成", desc: "多场景研究报告自动化产出，降低创作成本" },
+          { name: "AI产业情报(TI)", desc: "深度报告与情报监测，重塑信息获取效率与质量" },
+          { name: "AI决策辅助(DILI)", desc: "面向投资与招商的智能尽调引擎，辅助科学决策" },
         ]
       },
-      vision: "实现传统业务转型升级 + 创新业务落地商业化，打造面向政企的完整产品服务体系。",
+      vision: "以'AI原生'重构产品逻辑，以'Know-How'构建竞争壁垒。做懂业务的AI产品，做有深度的智能服务。",
       targets: [
-        { label: "产品体系", value: "3+", desc: "核心产品线" },
-        { label: "客户覆盖", value: "100+", desc: "政企客户" },
-        { label: "年度收入", value: "200+", unit: "万" },
+        { label: "核心产品", value: "2+", desc: "TI与DILI" },
+        { label: "行业壁垒", value: "High", desc: "Know-How融合" },
+        { label: "商业价值", value: "200+", unit: "万" },
       ]
     }
   },
   {
     id: 3,
-    title: "运营模式联动创新",
-    subtitle: "挖掘资源生态能力",
-    description: "与工赋中心市场运营推广协同联合，嫁接联通资源做产品推介，通过生态合作快速触达政企大客户，实现市场规模化。",
-    badges: ["生态协同", "资源整合"],
+    title: "运营生态化",
+    subtitle: "【借力生态】通过伙伴实现新产品规模化推广",
+    description: "卖没有卖过的产品，必然面临渠道与认知的巨大鸿沟。不单打独斗，而是依托联通AI中试基地、国家母基金、神州数码等生态伙伴，构建适应AI新产品的推广渠道与交付生态。",
+    badges: ["生态借力", "渠道破局", "资本联动"],
     image: "/plan_4_ecosystem.png",
     priority: "增长引擎",
     color: "text-accent",
     priorityBg: "bg-accent/10 text-accent",
     content: {
       foundation: {
-        title: "合作模式",
+        title: "关键生态布局",
         items: [
-          { name: "工赋中心协同", desc: "市场运营推广联合，实现1+1>2效果" },
-          { name: "资源生态嫁接", desc: "联通资源对接，获得渠道优势与市场机会" },
-          { name: "产品推介联动", desc: "联合品牌推广，提升产品市场认知度" },
+          { name: "联通·AI中试基地", desc: "依托运营商网络与算力资源，触达政企边缘" },
+          { name: "资本侧联动", desc: "借助国家母基金与深创投，以资本力量撬动业务" },
+          { name: "渠道合作伙伴", desc: "神州数码、上奇等，复用成熟B端/G端渠道" },
         ]
       },
-      approach: "不走传统销售模式，而是通过生态合作、资源整合、联合推介，快速打开政企市场，形成可复制的合作范式。",
+      approach: "面对不同画像的客户与全新的交付模式，必须走'生态共建'之路。利用伙伴的渠道优势弥补短板，快速打开市场。",
       targets: [
-        { label: "合作伙伴", value: "5+", desc: "生态合作关系" },
-        { label: "客户触达", value: "500+", desc: "政企大客户" },
-        { label: "联动收入", value: "150+", unit: "万" },
+        { label: "核心伙伴", value: "5+", desc: "深度战略合作" },
+        { label: "渠道触达", value: "500+", desc: "精准客户" },
+        { label: "生态收入", value: "150+", unit: "万" },
       ]
     }
   }
@@ -320,7 +319,7 @@ const PlanSection = () => {
                     <div className="flex-grow flex flex-col">
                       <h3 className="text-2xl font-bold mb-2">{plan.title}</h3>
                       <p className="text-sm font-medium text-muted-foreground mb-4">{plan.subtitle}</p>
-                      <p className="text-muted-foreground/80 text-sm leading-relaxed mb-6 line-clamp-2">
+                      <p className="text-muted-foreground/80 text-sm leading-relaxed mb-6 line-clamp-3">
                         {plan.description}
                       </p>
                       <div className="flex gap-2 mt-auto">
@@ -375,11 +374,10 @@ const PlanSection = () => {
                               <div className="flex items-start justify-between mb-2">
                                 <h5 className="font-bold text-sm">{item.name}</h5>
                                 {item.status && (
-                                  <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
-                                    item.status === '已上线' || item.status === '已完成' ? 'bg-green-500/10 text-green-600' :
+                                  <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${item.status === '已上线' || item.status === '已完成' ? 'bg-green-500/10 text-green-600' :
                                     item.status === '内测中' || item.status === '进行中' ? 'bg-yellow-500/10 text-yellow-600' :
-                                    'bg-blue-500/10 text-blue-600'
-                                  }`}>
+                                      'bg-blue-500/10 text-blue-600'
+                                    }`}>
                                     {item.status}
                                   </span>
                                 )}
