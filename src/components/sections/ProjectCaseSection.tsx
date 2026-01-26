@@ -203,7 +203,7 @@ const projects: ProjectDetail[] = [
     category: "运营统筹",
     subtitle: "推动平台从建设期向规范化运营期转型",
     description: "作为中心与工赋中心的接口部门，充分履行委托方的统筹与赋能职责。通过战略引导、机制保障、资金拨付、模式创新、组织激活及资本驱动等多维扶持，成功推动平台跨入具备自我造血功能的规范化运营期，实现业务正向飞轮。",
-    highlights: ["回退资金3000万", "运营战略重构", "组织团队激活"],
+    highlights: ["争取3000万资源", "运营战略重构", "组织团队激活"],
     image: "/shenzhen_factory.png",
     color: "border-accent",
     problem: "平台处于从建设向运营转型的关键阶段，亟需建立规范化运营机制、实现业务正向飞轮与自我造血功能。",
@@ -243,7 +243,7 @@ const projects: ProjectDetail[] = [
     ],
     // 核心成果指标
     metrics: [
-      { value: "3000万", label: "回退资金", change: "重大经营创效", icon: "DollarSign", color: "text-yellow-600" },
+      { value: "3000万", label: "运营资源", change: "重大经营创效", icon: "DollarSign", color: "text-yellow-600" },
       { value: "战略重构", label: "运营方向明晰", change: "定位清晰可执行", icon: "Compass", color: "text-blue-600" },
       { value: "组织激活", label: "架构与团队重组", change: "战略执行保障", icon: "Users", color: "text-purple-600" },
       { value: "合规机制", label: "协议与制度完善", change: "双方权责明晰", icon: "Shield", color: "text-green-600" },
@@ -253,7 +253,7 @@ const projects: ProjectDetail[] = [
       { phase: "Q1", time: "规范运营：签订年度委托运营协议", status: "done" },
       { phase: "Q2", time: "战略引导：主导编制工赋战略规划，探索业务创新", status: "done" },
       { phase: "Q3", time: "组织重构：完成内部竞聘与人才配置优化", status: "done" },
-      { phase: "Q4", time: "资金保障：回退经费及资金拨付", status: "done" },
+      { phase: "Q4", time: "资金保障：争取运营资源及资金拨付", status: "done" },
     ],
     // 对内价值
     internalValue: [
@@ -264,7 +264,7 @@ const projects: ProjectDetail[] = [
     ],
     // 对外价值与核心亮点
     externalValue: [
-      "🏆 重大经营创效：项目初验谈判中回退资金3000万元，显著优化经营性现金流，极大缓解运营压力",
+      "🏆 重大经营创效：项目初验谈判中争取3000万元运营资源，显著优化经营性现金流，极大缓解运营压力",
       "🏆 国家级资质突破：统筹助力平台入选工信部首批'重点培育中试平台'初步名单，获得国家级认可",
       "业务模式创新：探索《粤港澳大湾区新质生产力服务平台运营实施方案》，实现新业务从0到1突破",
       "资本路径拓宽：推进工业互联网子基金方案编制，构建产业+资本双轮驱动模式",
