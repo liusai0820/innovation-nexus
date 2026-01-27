@@ -525,7 +525,7 @@ const projects: ProjectDetail[] = [
     description:
       "在“投早、投小、投硬科技”与国家千亿级创业基金入场的大背景下，围绕中小硬科技企业信息匮乏、尽调困难的问题，打造新一代投资研究工具——金融diki。",
     highlights: ["投资界的 Cursor", "信息搜集到报告的一站式闭环", "专注硬科技投研场景"],
-    image: "/shenzhen_presentation.png",
+    image: "/dili.png",
     color: "border-primary",
     problem:
       "在国家倡导“构造、投小、投硬科技”和千亿级创业基金入场的趋势下，大量中小硬科技企业进入视野，但信息高度分散且不透明，传统尽调严重依赖人工，成本高、周期长、质量难以保证，系统性投研能力不足的问题将逐步暴露。",
