@@ -554,9 +554,10 @@ const projects: ProjectDetail[] = [
       },
     ],
     metrics: [
-      { value: "心流引导", label: "心灵减负", change: "将尽调重构为侦探破案，将高认知负荷工作转化为高沉浸度、高激励的探索过程" },
-      { value: "白盒化", label: "信任基础", change: "所有尽调过程完全可视化。用户可追溯任意论断的来源" },
-      { value: "人机协同", label: "交互理念", change: "保留结论与数据的选择权，给予专业人士充足的尊严与掌控感" },
+      { value: "线索提取", label: "ALCE", change: "从海量信息中提取尽调所需关键线索" },
+      { value: "逻辑对抗", label: "GCQ", change: "通过高强度的逻辑对抗，寻找潜在未知信息" },
+      { value: "假设验证", label: "HHC", change: "实现基于信息与逻辑的假设与验证全流程闭环" },
+      { value: "数据融合", label: "DDT", change: "实现线上线下多类型数据源的有机整合" },
     ],
     timeline: [
       { phase: "概念提出（内部研讨）", time: "2025 Q3", status: "done" },
