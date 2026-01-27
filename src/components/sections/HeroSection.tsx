@@ -51,7 +51,7 @@ const HeroSection = () => {
         {/* 创新荣誉标签 */}
         <div className="flex flex-wrap justify-center gap-4 mb-14 animate-fade-in" style={{ animationDelay: "0.5s" }}>
           {[
-            { Icon: Trophy, text: "智库业务转型赋能者", color: "text-gold", border: "border-gold/30", bg: "bg-gold/5" },
+            { Icon: Trophy, text: "智库业务转型赋能者", color: "text-gold-dark", border: "border-gold/30", bg: "bg-gold/5" },
             { Icon: Award, text: "平台创新运营探索者", color: "text-primary", border: "border-primary/30", bg: "bg-primary/5" },
             { Icon: Zap, text: "模型原生产品创造者", color: "text-accent", border: "border-accent/30", bg: "bg-accent/5" },
           ].map((item, idx) => (
